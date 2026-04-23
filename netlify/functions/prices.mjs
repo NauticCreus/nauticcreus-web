@@ -36,7 +36,7 @@ export default async (req, context) => {
 
   if (req.method === "POST") {
     const authHeader = req.headers.get("x-admin-password");
-    const adminPassword = process.env.ADMIN_PASSWORD || "nauticcreus2026";
+    const adminPassword = "NauticCreus452";
 
     if (authHeader !== adminPassword) {
       return new Response("Unauthorized", { status: 401 });
