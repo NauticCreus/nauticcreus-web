@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nàutic Creus · Informació Legal</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0d2137; --ocean:#1a4a6e; --sea:#2e7daa;
+    --gold:#b8975a; --sand:#f5f0e8; --white:#ffffff;
+    --text:#1a2b3c; --muted:#6b8699; --silver:#c8c8d4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--sand); color:var(--text); min-height:100vh; }
+  header { background:var(--navy); box-shadow:0 2px 24px rgba(0,0,0,.35); }
+  .header-inner { max-width:860px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 24px; }
+  .logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .logo-name { font-family:'Cormorant Garamond',serif; color:var(--silver); font-size:1.15rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase; }
+  .logo-tagline { color:rgba(184,151,90,.85); font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; display:block; margin-top:2px; }
+  .back-link { color:rgba(184,151,90,.8); font-size:.78rem; letter-spacing:.08em; text-decoration:none; display:flex; align-items:center; gap:6px; }
+  .back-link:hover { color:var(--gold); }
+  .back-link svg { width:14px; height:14px; fill:currentColor; }
+
+  .page-hero { background:linear-gradient(160deg,var(--navy) 0%,#163352 100%); padding:40px 24px 32px; text-align:center; }
+  .page-hero h1 { font-family:'Cormorant Garamond',serif; color:#fff; font-size:2rem; font-weight:300; letter-spacing:.04em; }
+  .page-hero p { color:rgba(255,255,255,.5); font-size:.8rem; letter-spacing:.08em; margin-top:6px; }
+
+  .tabs { background:#fff; border-bottom:1px solid rgba(13,33,55,.1); position:sticky; top:0; z-index:50; }
+  .tabs-inner { max-width:860px; margin:0 auto; display:flex; padding:0 24px; }
+  .tab { padding:14px 20px; font-size:.8rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); cursor:pointer; border-bottom:2px solid transparent; transition:all .2s; background:none; border-top:none; border-left:none; border-right:none; font-family:'DM Sans',sans-serif; }
+  .tab:hover { color:var(--navy); }
+  .tab.active { color:var(--navy); border-bottom-color:var(--gold); font-weight:600; }
+
+  .content { max-width:860px; margin:0 auto; padding:40px 24px 64px; }
+  .section { display:none; }
+  .section.active { display:block; }
+
+  .update-badge { display:inline-flex; align-items:center; background:rgba(46,125,170,.1); border:1px solid rgba(46,125,170,.25); color:var(--sea); font-size:.7rem; letter-spacing:.1em; padding:4px 12px; border-radius:20px; margin-bottom:28px; text-transform:uppercase; }
+
+  h2 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--navy); margin:32px 0 10px; padding-bottom:8px; border-bottom:1px solid rgba(13,33,55,.08); }
+  h2:first-of-type { margin-top:0; }
+  h3 { font-size:.9rem; font-weight:600; color:var(--ocean); margin:20px 0 8px; letter-spacing:.03em; }
+  p { font-size:.9rem; line-height:1.75; color:#2a3d4f; margin-bottom:12px; }
+  ul { margin:8px 0 14px 0; padding-left:20px; }
+  li { font-size:.9rem; line-height:1.7; color:#2a3d4f; margin-bottom:4px; }
+  .info-box { background:#fff; border-radius:10px; padding:20px 22px; box-shadow:0 2px 12px rgba(13,33,55,.07); border-left:3px solid var(--gold); margin:20px 0; }
+  .info-box p { margin:0; font-size:.88rem; }
+  .info-box strong { color:var(--navy); }
+  a { color:var(--sea); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  footer { background:var(--navy); color:rgba(255,255,255,.4); text-align:center; padding:20px 24px; font-size:.75rem; }
+  footer strong { color:var(--gold); }
+
+  @media(max-width:600px) {
+    .tab { padding:12px 12px; font-size:.72rem; }
+    h2 { font-size:1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">
+      <div>
+        <div class="logo-name">Nàutic Creus</div>
+        <span class="logo-tagline">Cleaning Solutions</span>
+      </div>
+    </a>
+    <a class="back-link" href="/">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      Tornar a la web
+    </a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <h1>Informació Legal</h1>
+  <p>Política de Privacitat · Avís Legal · Política de Cookies</p>
+</div>
+
+<div class="tabs">
+  <div class="tabs-inner">
+    <button class="tab active" onclick="showTab('privacitat')">Política de Privacitat</button>
+    <button class="tab" onclick="showTab('avis')">Avís Legal</button>
+    <button class="tab" onclick="showTab('cookies')">Cookies</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  POLÍTICA DE PRIVACITAT                            -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section active" id="privacitat">
+    <div class="update-badge">Última actualització: abril 2026</div>
+
+    <h2>1. Responsable del tractament</h2>
+    <div class="info-box">
+      <p><strong>Responsable:</strong> Rita Suarez-Fuster Torra</p>
+      <p><strong>NIF:</strong> 47951202C</p>
+      <p><strong>Adreça:</strong> Muntaner 360, 2-1 · 08006 Barcelona</p>
+      <p><strong>Activitat:</strong> Serveis de neteja nàutica (Nàutic Creus)</p>
+      <p><strong>Correu:</strong> <a href="mailto:info@nauticcreus.com">info@nauticcreus.com</a></p>
+      <p><strong>Telèfon:</strong> +34 663 876 778</p>
+    </div>
+
+    <h2>2. Dades que recollim</h2>
+    <p>Recollim les dades personals que vostè ens facilita de manera voluntària a través dels nostres canals de contacte i reserva:</p>
+    <ul>
+      <li><strong>Identificació:</strong> nom i cognoms</li>
+      <li><strong>Contacte:</strong> adreça de correu electrònic i número de telèfon</li>
+      <li><strong>Servei:</strong> port on es troba l'embarcació, mida de l'embarcació i tipus de servei sol·licitat</li>
+      <li><strong>Comunicacions:</strong> contingut dels missatges que ens envia per correu electrònic, WhatsApp o formularis</li>
+    </ul>
+
+    <h2>3. Finalitats i base jurídica</h2>
+    <h3>Gestió de reserves i prestació del servei</h3>
+    <p>Tractem les seves dades per atendre les sol·licituds de pressupost i reserva, coordinar les visites i prestar els serveis de neteja nàutica contractats. La base jurídica és l'execució d'un contracte (art. 6.1.b RGPD).</p>
+
+    <h3>Comunicació comercial</h3>
+    <p>Si ens ho autoritza expressament, podrem enviar-li informació sobre novetats, ofertes i serveis de Nàutic Creus. La base jurídica és el consentiment (art. 6.1.a RGPD), que podrà revocar en qualsevol moment.</p>
+
+    <h3>Obligacions legals</h3>
+    <p>En alguns casos tractarem les seves dades per complir obligacions legals aplicables a l'activitat (art. 6.1.c RGPD).</p>
+
+    <h2>4. Conservació de les dades</h2>
+    <p>Conservem les seves dades durant el temps necessari per a la prestació del servei i, posteriorment, durant els terminis legalment exigibles (en general, 5 anys per a obligacions mercantils i 4 anys per a obligacions tributàries). Les dades facilitades amb finalitat comercial es conserven fins que revoqui el consentiment.</p>
+
+    <h2>5. Destinataris</h2>
+    <p>Les seves dades no es cediran a tercers, excepte en els casos següents:</p>
+    <ul>
+      <li><strong>Calendly Inc.</strong> (plataforma de gestió de reserves online, amb seu als EUA i adequació al marc UE-EUA de protecció de dades)</li>
+      <li><strong>Zoho Corporation</strong> (proveïdor de correu electrònic)</li>
+      <li><strong>Administracions públiques</strong> quan ho exigeixi la normativa aplicable</li>
+    </ul>
+    <p>Tots els proveïdors actuen com a encarregats del tractament amb les garanties adequades conforme al RGPD.</p>
+
+    <h2>6. Drets de les persones interessades</h2>
+    <p>Pot exercir en qualsevol moment els drets següents enviant un correu a <a href="mailto:info@nauticcreus.com">info@nauticcreus.com</a> amb còpia del seu document d'identitat:</p>
+    <ul>
+      <li><strong>Accés:</strong> obtenir confirmació sobre si tractem les seves dades i accedir-hi</li>
+      <li><strong>Rectificació:</strong> sol·licitar la correcció de dades inexactes o incompletes</li>
+      <li><strong>Supressió:</strong> demanar l'eliminació de les seves dades quan ja no siguin necessàries</li>
+      <li><strong>Oposició:</strong> oposar-se al tractament de les seves dades en determinades circumstàncies</li>
+      <li><strong>Limitació:</strong> sol·licitar la restricció del tractament en certs casos</li>
+      <li><strong>Portabilitat:</strong> rebre les seves dades en format estructurat i llegible per màquina</li>
+    </ul>
+    <p>Té dret a presentar una reclamació davant l'<strong>Agència Espanyola de Protecció de Dades</strong> (<a href="https://www.aepd.es" target="_blank">www.aepd.es</a>) si considera que el tractament de les seves dades vulnera la normativa.</p>
+
+    <h2>7. Seguretat</h2>
+    <p>Apliquem mesures tècniques i organitzatives adequades per garantir la seguretat de les seves dades i evitar-ne l'accés no autoritzat, la pèrdua o la destrucció, d'acord amb l'article 32 del RGPD.</p>
+
+    <h2>8. Canvis en aquesta política</h2>
+    <p>Podrem actualitzar aquesta política de privacitat per adaptar-la a canvis normatius o en la nostra activitat. Li notificarem els canvis significatius a través del nostre correu electrònic o mitjançant un avís destacat a la web.</p>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  AVÍS LEGAL                                        -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section" id="avis">
+    <div class="update-badge">Última actualització: abril 2026</div>
+
+    <h2>1. Titular del lloc web</h2>
+    <div class="info-box">
+      <p><strong>Titular:</strong> Rita Suarez-Fuster Torra</p>
+      <p><strong>NIF:</strong> 47951202C</p>
+      <p><strong>Adreça:</strong> Muntaner 360, 2-1 · 08006 Barcelona</p>
+      <p><strong>Nom comercial:</strong> Nàutic Creus – Cleaning Solutions</p>
+      <p><strong>Correu electrònic:</strong> <a href="mailto:info@nauticcreus.com">info@nauticcreus.com</a></p>
+      <p><strong>Telèfon:</strong> +34 663 876 778</p>
+      <p><strong>Lloc web:</strong> <a href="https://www.nauticcreus.com">www.nauticcreus.com</a></p>
+    </div>
+    <p>Rita Suarez-Fuster Torra exerceix l'activitat de serveis de neteja i manteniment nàutic com a professional autònoma, donada d'alta en el règim especial de treballadors autònoms (RETA) de la Seguretat Social espanyola.</p>
+
+    <h2>2. Condicions d'ús</h2>
+    <p>L'accés i la navegació per aquest lloc web impliquen l'acceptació plena de les presents condicions. Si no hi està d'acord, li preguem que no faci servir el lloc web.</p>
+    <p>L'usuari es compromet a fer un ús lícit del lloc web i dels seus continguts, abstenir-se d'activitats que puguin danyar, inutilitzar o deteriorar el lloc web o els seus sistemes, i no intentar accedir de manera no autoritzada als sistemes informàtics del titular.</p>
+
+    <h2>3. Propietat intel·lectual i industrial</h2>
+    <p>Tots els continguts d'aquest lloc web —textos, imatges, logotips, disseny gràfic, codi font i qualsevol altre element— són titularitat de Rita Suarez-Fuster Torra o, si s'escau, de tercers que n'han autoritzat l'ús, i estan protegits per la legislació espanyola i europea sobre propietat intel·lectual i industrial.</p>
+    <p>Queda expressament prohibida la reproducció total o parcial, la distribució, la comunicació pública o la transformació d'aquests continguts sense autorització prèvia i expressa del titular.</p>
+
+    <h2>4. Responsabilitat</h2>
+    <p>El titular no es fa responsable dels danys i perjudicis que puguin derivar-se de la impossibilitat d'accedir al lloc web per causes alienes a la seva voluntat, de la presència de virus o altres elements lesius introduïts per tercers, ni de l'ús inadequat del lloc web per part dels usuaris.</p>
+    <p>Les tarifes i la informació publicades al lloc web tenen caràcter orientatiu i poden variar. Per obtenir un pressupost definitiu, contacti directament amb Nàutic Creus.</p>
+
+    <h2>5. Llei aplicable i jurisdicció</h2>
+    <p>Les presents condicions es regeixen per la legislació espanyola. Per a la resolució de qualsevol controvèrsia derivada de l'ús d'aquest lloc web, les parts se sotmeten als jutjats i tribunals de Barcelona, amb renúncia expressa a qualsevol altre fur que els pogués correspondre.</p>
+
+    <h2>6. Normativa aplicable</h2>
+    <p>Aquest lloc web compleix la normativa vigent, en particular:</p>
+    <ul>
+      <li>Reglament (UE) 2016/679 del Parlament Europeu i del Consell (RGPD)</li>
+      <li>Llei Orgànica 3/2018, de 5 de desembre, de Protecció de Dades Personals i garantia dels drets digitals (LOPDGDD)</li>
+      <li>Llei 34/2002, d'11 de juliol, de Serveis de la Societat de la Informació i Comerç Electrònic (LSSI-CE)</li>
+      <li>Llei 7/1998, de 13 d'abril, sobre Condicions Generals de la Contractació</li>
+    </ul>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  POLÍTICA DE COOKIES                               -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section" id="cookies">
+    <div class="update-badge">Última actualització: abril 2026</div>
+
+    <h2>1. Què són les cookies?</h2>
+    <p>Les cookies són fitxers de text petits que els llocs web emmagatzemen al navegador del visitant. Permeten que el lloc web recordi les preferències de l'usuari, analitzi el trànsit o ofereixi funcionalitats addicionals.</p>
+
+    <h2>2. Cookies pròpies</h2>
+    <p>El lloc web de Nàutic Creus (<strong>nauticcreus.com</strong>) <strong>no utilitza cookies pròpies</strong> de seguiment ni analítica. No instal·lem cap cookie al navegador de l'usuari durant la navegació per les nostres pàgines de tarifes.</p>
+
+    <h2>3. Cookies de tercers — Calendly</h2>
+    <p>Quan l'usuari fa clic al botó <em>"Reserva online"</em>, és redirigit al lloc web de <strong>Calendly Inc.</strong> (<a href="https://calendly.com" target="_blank">calendly.com</a>), un servei extern de gestió de reserves. En accedir a Calendly, aquest servei pot instal·lar les seves pròpies cookies al navegador de l'usuari.</p>
+    <p>Nàutic Creus no controla ni és responsable de les cookies que Calendly pugui instal·lar. Per obtenir informació completa sobre el tractament de dades i cookies de Calendly, consulti la seva política de privacitat a:</p>
+    <p><a href="https://calendly.com/privacy" target="_blank">https://calendly.com/privacy</a></p>
+
+    <h3>Tipus de cookies que pot instal·lar Calendly</h3>
+    <ul>
+      <li><strong>Cookies tècniques i de sessió:</strong> necessàries per al funcionament de la plataforma de reserves</li>
+      <li><strong>Cookies analítiques:</strong> per mesurar l'ús de la plataforma</li>
+      <li><strong>Cookies de preferències:</strong> per recordar la zona horària i idioma de l'usuari</li>
+    </ul>
+
+    <h2>4. Com gestionar les cookies</h2>
+    <p>Pot configurar el seu navegador per bloquejar o eliminar les cookies en qualsevol moment. Tingui en compte que bloquejar les cookies de Calendly pot impedir el correcte funcionament del formulari de reserves.</p>
+    <p>A continuació trobarà els enllaços per gestionar les cookies als principals navegadors:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/ca/kb/activar-i-desactivar-les-galetes" target="_blank">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/ca-es/guide/safari/sfri11471/mac" target="_blank">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/ca-es/topic/eliminar-i-gestionar-les-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank">Microsoft Edge</a></li>
+    </ul>
+
+    <h2>5. Canvis en aquesta política</h2>
+    <p>Podrem actualitzar aquesta política de cookies si incorporem nous serveis o funcionalitats al lloc web. Li recomanem revisar-la periòdicament. La data de la darrera actualització apareix a la part superior d'aquest document.</p>
+
+    <h2>6. Contacte</h2>
+    <p>Si té qualsevol dubte sobre l'ús de cookies en aquest lloc web, pot contactar-nos a <a href="mailto:info@nauticcreus.com">info@nauticcreus.com</a>.</p>
+  </div>
+
+</div><!-- /content -->
+
+<footer>
+  <strong>Nàutic Creus</strong> · Cleaning Solutions · <a href="/" style="color:rgba(255,255,255,.4);">nauticcreus.com</a>
+</footer>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
