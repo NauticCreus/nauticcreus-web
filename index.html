@@ -106,6 +106,30 @@
   .btn-email:hover { background:#2570a0; transform:translateY(-1px); }
   .btn-instagram:hover { opacity:.9; transform:translateY(-1px); }
   .btn-contact svg { width:18px; height:18px; fill:currentColor; flex-shrink:0; }
+
+  /* PLAN CARDS */
+  .plans-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; margin-bottom:36px; }
+  .plan-card { background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 2px 24px rgba(13,33,55,.09); display:flex; flex-direction:column; }
+  .plan-card-header { padding:20px 24px 16px; }
+  .plan-card-header.basic { border-top:4px solid #74b9d6; }
+  .plan-card-header.standard { border-top:4px solid var(--sea); }
+  .plan-card-header.premium { border-top:4px solid var(--gold); background:linear-gradient(135deg,#fdf8f0,#fff); }
+  .plan-card-badge { font-size:.65rem; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .plan-card-badge.popular { color:var(--sea); }
+  .plan-card-name { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--navy); margin-bottom:4px; }
+  .plan-card-desc { font-size:.78rem; color:var(--muted); margin-bottom:12px; }
+  .plan-card-prices { display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-bottom:0; }
+  .plan-price-item { text-align:center; background:#f8fafc; border-radius:6px; padding:6px 4px; }
+  .plan-price-size { font-size:.6rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); display:block; }
+  .plan-price-val { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; color:var(--ocean); display:block; }
+  .plan-price-eur { font-size:.6rem; color:var(--muted); font-family:'DM Sans',sans-serif; }
+  .plan-card-features { padding:16px 24px 24px; border-top:1px solid rgba(13,33,55,.06); flex:1; }
+  .plan-feature { display:flex; align-items:center; gap:8px; font-size:.82rem; color:var(--text); padding:4px 0; }
+  .plan-feature.yes { color:var(--text); }
+  .plan-feature.no { color:var(--muted); }
+  .plan-feature-icon { width:16px; height:16px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:.65rem; font-weight:700; }
+  .plan-feature.yes .plan-feature-icon { background:rgba(42,125,79,.15); color:#2a7d4f; }
+  .plan-feature.no .plan-feature-icon { background:rgba(107,134,153,.12); color:var(--muted); }
 </style>
 </head>
 <body>
@@ -153,9 +177,9 @@
       </tr></thead>
       <tbody>
         <tr><td data-i18n="svc_ext">Neteja exterior</td><td><span class="price" id="p-exterior-0"></span></td><td><span class="price" id="p-exterior-1"></span></td><td><span class="price" id="p-exterior-2"></span></td><td><span class="price" id="p-exterior-3"></span></td></tr>
+        <tr style="background:#f8fafc;"><td style="padding-left:28px;font-size:.82rem;color:var(--muted);font-style:italic;" data-i18n="svc_detail_addon">↳ + Detailing (inox, teca, plàstics, cristalls)</td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+65</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+85</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+110</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+145</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td></tr>
         <tr><td data-i18n="svc_int">Neteja interior</td><td><span class="price" id="p-interior-0"></span></td><td><span class="price" id="p-interior-1"></span></td><td><span class="price" id="p-interior-2"></span></td><td><span class="price" id="p-interior-3"></span></td></tr>
         <tr><td data-i18n="svc_full">Servei complet (ext + int)</td><td><span class="price" id="p-complet-0"></span></td><td><span class="price" id="p-complet-1"></span></td><td><span class="price" id="p-complet-2"></span></td><td><span class="price" id="p-complet-3"></span></td></tr>
-        <tr><td data-i18n="svc_detail">Detailing (inox, teca, plàstics, cristalls)</td><td><span class="price" id="p-detailing-0"></span></td><td><span class="price" id="p-detailing-1"></span></td><td><span class="price" id="p-detailing-2"></span></td><td><span class="price" id="p-detailing-3"></span></td></tr>
       </tbody>
     </table>
   </div>
@@ -164,21 +188,71 @@
 
   <div class="section-label" data-i18n="label_plans">Plans de fidelització</div>
   <div class="section-title" data-i18n="title_plans">Plans mensuals</div>
-  <div class="table-wrap">
-    <table>
-      <thead><tr>
-        <th data-i18n="col_plan">Pla</th>
-        <th><span class="size-header">S</span><span class="size-range">≤ 6 m</span></th>
-        <th><span class="size-header">M</span><span class="size-range">6–8 m</span></th>
-        <th><span class="size-header">L</span><span class="size-range">8–10 m</span></th>
-        <th><span class="size-header">XL</span><span class="size-range">10–12 m</span></th>
-      </tr></thead>
-      <tbody>
-        <tr class="plan-basic"><td><span class="plan-name" data-i18n="plan_basic">Bàsic</span><span class="plan-desc" data-i18n="plan_basic_desc">2× exterior / mes</span></td><td><span class="price" id="p-basic-0"></span></td><td><span class="price" id="p-basic-1"></span></td><td><span class="price" id="p-basic-2"></span></td><td><span class="price" id="p-basic-3"></span></td></tr>
-        <tr class="plan-standard"><td><span class="plan-name" data-i18n="plan_std">Estàndard</span><span class="plan-desc" data-i18n="plan_std_desc">1× complet + 1× exterior</span></td><td><span class="price" id="p-standard-0"></span></td><td><span class="price" id="p-standard-1"></span></td><td><span class="price" id="p-standard-2"></span></td><td><span class="price" id="p-standard-3"></span></td></tr>
-        <tr class="plan-premium"><td><span class="plan-name" data-i18n="plan_prem">Premium</span><span class="plan-desc" data-i18n="plan_prem_desc">2× complet + detailing trim</span></td><td><span class="price" id="p-premium-0"></span></td><td><span class="price" id="p-premium-1"></span></td><td><span class="price" id="p-premium-2"></span></td><td><span class="price" id="p-premium-3"></span></td></tr>
-      </tbody>
-    </table>
+  <div class="plans-cards">
+
+    <!-- PLA BÀSIC -->
+    <div class="plan-card">
+      <div class="plan-card-header basic">
+        <div class="plan-card-badge" data-i18n="plan_badge_basic">Econòmic</div>
+        <div class="plan-card-name" data-i18n="plan_basic">Bàsic</div>
+        <div class="plan-card-desc" data-i18n="plan_basic_desc">2× neteja exterior al mes</div>
+        <div class="plan-card-prices">
+          <div class="plan-price-item"><span class="plan-price-size">S ≤6m</span><span class="plan-price-val" id="p-basic-0"></span><span class="plan-price-eur">€/mes</span></div>
+          <div class="plan-price-item"><span class="plan-price-size">M 6-8m</span><span class="plan-price-val" id="p-basic-1"></span><span class="plan-price-eur">€/mes</span></div>
+          <div class="plan-price-item"><span class="plan-price-size">L 8-10m</span><span class="plan-price-val" id="p-basic-2"></span><span class="plan-price-eur">€/mes</span></div>
+          <div class="plan-price-item"><span class="plan-price-size">XL 10-12m</span><span class="plan-price-val" id="p-basic-3"></span><span class="plan-price-eur">€/mes</span></div>
+        </div>
+      </div>
+      <div class="plan-card-features">
+        <div class="plan-feature yes"><span class="plan-feature-icon">✓</span><span data-i18n="pf_ext2">2× neteja exterior al mes</span></div>
+        <div class="plan-feature yes"><span class="plan-feature-icon">✓</span><span data-i18n="pf_travel">Desplaçament inclòs</span></div>
+        <div class="plan-feature no"><span class="plan-feature-icon">✕</span><span data-i18n="pf_no_int">Sense neteja interior</span></div>
+        <div class="plan-feature no"><span class="plan-feature-icon">✕</span><span data-i18n="pf_no_detail">Sense detailing</span></div>
+      </div>
+    </div>
+
+    <!-- PLA ESTÀNDARD -->
+    <div class="plan-card">
+      <div class="plan-card-header standard">
+        <div class="plan-card-badge popular" data-i18n="plan_badge_std">⭐ Més popular</div>
+        <div class="plan-card-name" data-i18n="plan_std">Estàndard</div>
+        <div class="plan-card-desc" data-i18n="plan_std_desc">1× complet + 1× exterior al mes</div>
+        <div class="plan-card-prices">
+          <div class="plan-price-item"><span class="plan-price-size">S ≤6m</span><span class="plan-price-val" id="p-standard-0"></span><span class="plan-price-eur">€/mes</span></div>
+          <div class="plan-price-item"><span class="plan-price-size">M 6-8m</span><span class="plan-price-val" id="p-standard-1"></span><span class="plan-price-eur">€/mes</span></div>
+          <div class="plan-price-item"><span class="plan-price-size">L 8-10m</span><span class="plan-price-val" id="p-standard-2"></span><span class="plan-price-eur">€/mes</span></div>
+          <div class="plan-price-item"><span class="plan-price-size">XL 10-12m</span><span class="plan-price-val" id="p-standard-3"></span><span class="plan-price-eur">€/mes</span></div>
+        </div>
+      </div>
+      <div class="plan-card-features">
+        <div class="plan-feature yes"><span class="plan-feature-icon">✓</span><span data-i18n="pf_full1">1× servei complet (ext + int) al mes</span></div>
+        <div class="plan-feature yes"><span class="plan-feature-icon">✓</span><span data-i18n="pf_ext1">1× neteja exterior addicional</span></div>
+        <div class="plan-feature yes"><span class="plan-feature-icon">✓</span><span data-i18n="pf_travel">Desplaçament inclòs</span></div>
+        <div class="plan-feature no"><span class="plan-feature-icon">✕</span><span data-i18n="pf_no_detail">Sense detailing</span></div>
+      </div>
+    </div>
+
+    <!-- PLA PREMIUM -->
+    <div class="plan-card">
+      <div class="plan-card-header premium">
+        <div class="plan-card-badge" style="color:var(--gold)" data-i18n="plan_badge_prem">✦ Premium</div>
+        <div class="plan-card-name" data-i18n="plan_prem">Premium</div>
+        <div class="plan-card-desc" data-i18n="plan_prem_desc">2× complet + detailing trimestral</div>
+        <div class="plan-card-prices">
+          <div class="plan-price-item"><span class="plan-price-size">S ≤6m</span><span class="plan-price-val" id="p-premium-0"></span><span class="plan-price-eur">€/mes</span></div>
+          <div class="plan-price-item"><span class="plan-price-size">M 6-8m</span><span class="plan-price-val" id="p-premium-1"></span><span class="plan-price-eur">€/mes</span></div>
+          <div class="plan-price-item"><span class="plan-price-size">L 8-10m</span><span class="plan-price-val" id="p-premium-2"></span><span class="plan-price-eur">€/mes</span></div>
+          <div class="plan-price-item"><span class="plan-price-size">XL 10-12m</span><span class="plan-price-val" id="p-premium-3"></span><span class="plan-price-eur">€/mes</span></div>
+        </div>
+      </div>
+      <div class="plan-card-features">
+        <div class="plan-feature yes"><span class="plan-feature-icon">✓</span><span data-i18n="pf_full2">2× servei complet (ext + int) al mes</span></div>
+        <div class="plan-feature yes"><span class="plan-feature-icon">✓</span><span data-i18n="pf_detail_trim">Detailing trimestral inclòs</span></div>
+        <div class="plan-feature yes"><span class="plan-feature-icon">✓</span><span data-i18n="pf_travel">Desplaçament inclòs</span></div>
+        <div class="plan-feature yes"><span class="plan-feature-icon">✓</span><span data-i18n="pf_priority">Prioritat en reserves</span></div>
+      </div>
+    </div>
+
   </div>
 
   <div class="divider"></div>
