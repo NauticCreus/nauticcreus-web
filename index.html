@@ -76,8 +76,8 @@
   footer a { color:rgba(255,255,255,.35); text-decoration:none; }
   footer a:hover { color:var(--gold); }
   @media(max-width:540px) { .header-inner { flex-wrap:wrap; justify-content:center; } }
-  .nav-link { color:rgba(255,255,255,.6); font-family:'DM Sans',sans-serif; font-size:.78rem; font-weight:500; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; padding:6px 10px; border-radius:5px; transition:all .18s; white-space:nowrap; }
-  .nav-link:hover { color:#fff; background:rgba(255,255,255,.1); }
+  .nav-link { color:rgba(200,200,210,.55); font-family:'DM Sans',sans-serif; font-size:.78rem; font-weight:400; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; padding:6px 10px; border-radius:5px; transition:all .18s; white-space:nowrap; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); }
+  .nav-link:hover { color:rgba(255,255,255,.85); background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.18); }
   .contact-section { background:var(--navy); padding:40px 24px 48px; text-align:center; }
   .contact-title { font-family:'Cormorant Garamond',serif; color:var(--white); font-size:1.8rem; font-weight:300; letter-spacing:.04em; margin-bottom:6px; }
   .contact-title em { font-style:normal; color:var(--gold); font-weight:600; }
@@ -126,7 +126,7 @@
         <div class="logo-tagline">Cleaning Solutions</div>
       </div>
     </div>
-    <a class="nav-link" href="#about" id="nav-about" data-i18n="nav_about">Sobre nosaltres</a>
+    <a class="nav-link" href="/about" id="nav-about" data-i18n="nav_about">Sobre nosaltres</a>
     <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('ca')" title="Català"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="#FCDD09"/><rect y="2.5" width="20" height="2.5" fill="#DA121A"/><rect y="7.5" width="20" height="2.5" fill="#DA121A"/><rect y="12.5" width="20" height="2.5" fill="#DA121A"/><rect y="17.5" width="20" height="2.5" fill="#DA121A"/></svg> CA</button>
       <button class="lang-btn" onclick="setLang('es')" title="Castellano"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="#c60b1e"/><rect y="5" width="20" height="10" fill="#ffc400"/></svg> ES</button>
@@ -272,44 +272,6 @@
 </div>
 </main>
 
-<div class="about-section" id="about">
-  <div class="about-inner">
-    <div class="section-label" data-i18n="label_about">Qui som</div>
-    <div class="section-title" data-i18n="title_about">Sobre Nàutic Creus</div>
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="about-lang" id="about-ca">
-          <p>Nàutic Creus neix d'una necessitat real: la manca d'un servei de neteja nàutica professional i de qualitat a la Costa Brava. Parlant amb armadors i navegants de la zona, vam confirmar que no érem els únics que el buscàvem sense trobar-lo — i vam decidir ser-ne la solució.</p>
-          <p>Entenem que una embarcació no és només un vehicle. És una inversió, un espai de llibertat i, sovint, una passió. Per això mereix una atenció que vagi més enllà d'una neteja superficial. El nostre compromís és tractar cada vaixell amb la cura i el rigor que es mereix, com si fos el nostre.</p>
-          <p>Operem al llarg del litoral català, organitzant el nostre calendari per poder arribar a quasi tots els ports de la costa. La idea és senzilla: tu gaudeixes del mar i del teu temps, nosaltres ens ocupem de la resta.</p>
-          <p>Treballem amb els millors productes del mercat, seleccionats per la seva eficàcia i pel seu respecte amb el medi ambient marí. Perquè entenem la importància del que hi ha sota les aigües cristal·lines de la Costa Brava — i estem compromesos a preservar-ho. Cada servei que fem és també un acte de cura envers el mar que estimem.</p>
-        </div>
-        <div class="about-lang" id="about-es" style="display:none">
-          <p>Nàutic Creus nace de una necesidad real: la falta de un servicio de limpieza náutica profesional y de calidad en la Costa Brava. Hablando con armadores y navegantes de la zona, confirmamos que no éramos los únicos que lo buscábamos sin encontrarlo — y decidimos ser la solución.</p>
-          <p>Entendemos que una embarcación no es solo un vehículo. Es una inversión, un espacio de libertad y, a menudo, una pasión. Por eso merece una atención que vaya más allá de una limpieza superficial. Nuestro compromiso es tratar cada barco con el cuidado y el rigor que merece, como si fuera el nuestro.</p>
-          <p>Operamos a lo largo del litoral catalán, organizando nuestro calendario para poder llegar a casi todos los puertos de la costa. La idea es sencilla: tú disfrutas del mar y de tu tiempo, nosotros nos encargamos del resto.</p>
-          <p>Trabajamos con los mejores productos del mercado, seleccionados por su eficacia y por su respeto con el medio ambiente marino. Porque entendemos la importancia de lo que hay bajo las aguas cristalinas de la Costa Brava — y estamos comprometidos a preservarlo. Cada servicio que realizamos es también un acto de cuidado hacia el mar que amamos.</p>
-        </div>
-        <div class="about-lang" id="about-en" style="display:none">
-          <p>Nàutic Creus was born from a real need: the lack of a professional, high-quality boat cleaning service on the Costa Brava. Talking with boat owners and sailors in the area, we confirmed that we were not the only ones looking for it without success — and we decided to become the solution.</p>
-          <p>We understand that a vessel is not just a vehicle. It is an investment, a space of freedom and, often, a passion. That is why it deserves attention that goes beyond a superficial clean. Our commitment is to treat every boat with the care and rigour it deserves, as if it were our own.</p>
-          <p>We operate along the Catalan coastline, organising our schedule to reach almost every port along the coast. The idea is simple: you enjoy the sea and your time, we take care of the rest.</p>
-          <p>We work with the best products on the market, chosen for their effectiveness and their respect for the marine environment. Because we understand the importance of what lies beneath the crystal-clear waters of the Costa Brava — and we are committed to preserving it. Every service we carry out is also an act of care for the sea we love.</p>
-        </div>
-        <div class="about-lang" id="about-fr" style="display:none">
-          <p>Nàutic Creus est né d'un besoin réel : l'absence d'un service de nettoyage nautique professionnel et de qualité sur la Costa Brava. En discutant avec des propriétaires de bateaux et des navigateurs de la région, nous avons confirmé que nous n'étions pas les seuls à le chercher sans le trouver — et nous avons décidé d'en être la solution.</p>
-          <p>Nous comprenons qu'une embarcation n'est pas seulement un véhicule. C'est un investissement, un espace de liberté et, souvent, une passion. C'est pourquoi elle mérite une attention qui va au-delà d'un simple nettoyage. Notre engagement est de traiter chaque bateau avec le soin et la rigueur qu'il mérite, comme s'il était le nôtre.</p>
-          <p>Nous opérons tout au long du littoral catalan, en organisant notre calendrier pour pouvoir atteindre presque tous les ports de la côte. L'idée est simple : vous profitez de la mer et de votre temps, nous nous occupons du reste.</p>
-          <p>Nous travaillons avec les meilleurs produits du marché, sélectionnés pour leur efficacité et leur respect de l'environnement marin. Car nous comprenons l'importance de ce qui se trouve sous les eaux cristallines de la Costa Brava — et nous sommes engagés à le préserver. Chaque service que nous réalisons est aussi un acte d'amour envers la mer que nous chérissons.</p>
-        </div>
-      </div>
-      <div class="about-images">
-        <div class="about-img"><img src="/foto1.png" alt="Nàutic Creus - Costa Brava"></div>
-        <div class="about-img"><img src="/foto2.png" alt="Nàutic Creus - Litoral català"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="contact-section">
   <div class="contact-title" data-i18n="contact_title">Reserva el teu <em>servei</em></div>
