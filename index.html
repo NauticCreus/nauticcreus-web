@@ -7,7 +7,336 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
+    --navy:#0d213<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nàutic Creus · Tarifes 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
     --navy:#0d2137; --ocean:#1a4a6e; --sea:#2e7daa;
+    --gold:#e8f0f5; --sand:#f5f0e8; --white:#ffffff;
+    --text:#1a2b3c; --muted:#6b8699; --silver:#c8c8d4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--sand); color:var(--text); min-height:100vh; }
+  header { background:var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 2px 24px rgba(0,0,0,.35); }
+  .header-inner { max-width:920px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 24px; gap:16px; }
+  .logo { display:flex; align-items:center; gap:14px; }
+  .logo-img-wrap { width:52px; height:52px; border-radius:50%; overflow:hidden; border:1.5px solid rgba(232,240,245,.5); flex-shrink:0; }
+  .logo-img-wrap img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+  .logo-name { font-family:'Cormorant Garamond',serif; color:var(--silver); font-size:1.25rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase; line-height:1; }
+  .logo-divider { width:100%; height:1px; background:linear-gradient(90deg,rgba(232,240,245,.7),transparent); margin:4px 0 3px; }
+  .logo-tagline { color:rgba(232,240,245,.9); font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; }
+  .lang-switcher { display:flex; gap:3px; background:rgba(255,255,255,.07); border-radius:8px; padding:4px; }
+  .lang-btn { background:none; border:none; color:rgba(255,255,255,.6); font-family:'DM Sans',sans-serif; font-size:.75rem; font-weight:500; letter-spacing:.04em; padding:4px 8px; border-radius:5px; cursor:pointer; transition:all .18s; display:inline-flex; align-items:center; gap:6px; }
+  .lang-btn svg { width:18px; height:18px; border-radius:50%; overflow:hidden; flex-shrink:0; box-shadow:0 1px 3px rgba(0,0,0,.3); }
+  .lang-btn:hover { color:#fff; background:rgba(255,255,255,.1); }
+  .lang-btn.active { background:var(--gold); color:var(--navy); font-weight:600; }
+  .hero { background:linear-gradient(160deg,var(--navy) 0%,#163352 55%,#1e5a82 100%); padding:52px 24px; text-align:center; position:relative; overflow:hidden; }
+  .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:56px; background:var(--sand); clip-path:ellipse(58% 100% at 50% 100%); }
+  .hero-deco { position:absolute; inset:0; background-image:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(232,240,245,.04) 48px,rgba(232,240,245,.04) 49px); pointer-events:none; }
+  .hero-logo { width:96px; height:96px; border-radius:50%; overflow:hidden; border:2px solid rgba(232,240,245,.4); margin:0 auto 20px; box-shadow:0 0 40px rgba(232,240,245,.15),0 8px 32px rgba(0,0,0,.4); position:relative; z-index:1; }
+  .hero-logo img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+  .hero h1 { font-family:'Cormorant Garamond',serif; color:#fff; font-size:clamp(2rem,6vw,3.2rem); font-weight:300; letter-spacing:.04em; margin-bottom:8px; position:relative; z-index:1; }
+  .hero h1 em { font-style:normal; color:var(--gold); font-weight:600; }
+  .hero-sub { color:rgba(255,255,255,.6); font-size:.82rem; font-weight:300; letter-spacing:.1em; text-transform:uppercase; position:relative; z-index:1; }
+  .iva-badge { display:inline-flex; align-items:center; background:rgba(232,240,245,.15); border:1px solid rgba(232,240,245,.35); color:var(--gold); font-size:.72rem; letter-spacing:.1em; padding:5px 14px; border-radius:20px; margin-top:14px; text-transform:uppercase; position:relative; z-index:1; }
+  main { max-width:920px; margin:0 auto; padding:36px 20px 64px; }
+  .section-label { font-size:.68rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--sea); margin-bottom:6px; }
+  .section-title { font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:600; color:var(--navy); margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+  .section-title::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(13,33,55,.2),transparent); }
+  .table-wrap { background:#fff; border-radius:14px; overflow:hidden; overflow-x:auto; box-shadow:0 2px 24px rgba(13,33,55,.09); margin-bottom:36px; }
+  table { width:100%; border-collapse:collapse; min-width:480px; }
+  thead th { background:var(--navy); color:#fff; font-size:.7rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; padding:13px 16px; text-align:center; }
+  thead th:not(:first-child) { width:18%; min-width:64px; }
+  thead th:first-child { text-align:left; }
+  .size-header { font-size:.9rem; font-weight:600; display:block; }
+  .size-range { font-size:.65rem; font-weight:300; color:rgba(200,232,245,.7); display:block; margin-top:2px; }
+  tbody tr { border-bottom:1px solid rgba(13,33,55,.06); transition:background .15s; }
+  tbody tr:last-child { border-bottom:none; }
+  tbody tr:hover { background:#f0f6fa; }
+  tbody td { padding:13px 16px; font-size:.88rem; text-align:center; color:var(--text); }
+  tbody td:first-child { text-align:left; }
+  .price { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; color:var(--ocean); white-space:nowrap; }
+  .price::after { content:' €'; font-size:.72rem; font-weight:400; font-family:'DM Sans',sans-serif; color:var(--muted); }
+  .plan-basic { border-left:3px solid #74b9d6; }
+  .plan-standard { border-left:3px solid var(--sea); }
+  .plan-premium { border-left:3px solid var(--gold); }
+  .plan-name { font-weight:600; font-size:.92rem; display:block; margin-bottom:2px; }
+  .plan-desc { display:block; font-size:.75rem; color:var(--muted); margin-bottom:6px; }
+  .plan-features { display:flex; flex-direction:column; gap:2px; }
+  .plan-feat { font-size:.7rem; color:var(--muted); display:flex; align-items:center; gap:4px; line-height:1.4; }
+  .feat-yes { color:#2e9e5a; font-weight:700; }
+  .feat-no { color:#b04040; font-weight:700; }
+  .supplements-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(195px,1fr)); gap:12px; margin-bottom:8px; }
+  .supp-card { background:#fff; border-radius:10px; padding:15px 16px; box-shadow:0 2px 10px rgba(13,33,55,.08); border-top:3px solid var(--sea); display:flex; flex-direction:column; gap:5px; }
+  .supp-name { font-size:.8rem; color:var(--text); line-height:1.3; }
+  .supp-val { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; color:var(--ocean); }
+  .divider { height:1px; background:linear-gradient(90deg,transparent,rgba(13,33,55,.12),transparent); margin:28px 0; }
+  .loading-overlay { position:fixed; inset:0; background:var(--navy); display:flex; align-items:center; justify-content:center; z-index:999; transition:opacity .4s; }
+  .loading-overlay.hidden { opacity:0; pointer-events:none; }
+  .loading-spinner { width:40px; height:40px; border:2px solid rgba(232,240,245,.3); border-top-color:var(--gold); border-radius:50%; animation:spin .8s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  footer { background:var(--navy); color:rgba(255,255,255,.45); text-align:center; padding:22px 24px; font-size:.76rem; letter-spacing:.04em; }
+  footer strong { color:var(--gold); font-weight:500; }
+  footer a { color:rgba(255,255,255,.35); text-decoration:none; }
+  footer a:hover { color:var(--gold); }
+  @media(max-width:540px) { .header-inner { flex-wrap:wrap; justify-content:center; } }
+  .contact-section { background:var(--navy); padding:40px 24px 48px; text-align:center; }
+  .contact-title { font-family:'Cormorant Garamond',serif; color:var(--white); font-size:1.8rem; font-weight:300; letter-spacing:.04em; margin-bottom:6px; }
+  .contact-title em { font-style:normal; color:var(--gold); font-weight:600; }
+  .contact-sub { color:rgba(255,255,255,.55); font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:28px; }
+  .contact-phone { color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:600; letter-spacing:.06em; margin-bottom:8px; display:block; text-decoration:none; }
+  .contact-phone:hover { opacity:.8; }
+  .contact-email-text { color:rgba(255,255,255,.5); font-size:.82rem; letter-spacing:.06em; display:block; margin-bottom:24px; text-decoration:none; }
+  .contact-email-text:hover { color:var(--gold); }
+  .btn-calendly-wrap { margin-bottom:20px; }
+  .btn-calendly { display:inline-flex; align-items:center; gap:9px; padding:15px 32px; border-radius:10px; background:var(--gold); color:var(--navy); font-family:'DM Sans',sans-serif; font-size:.92rem; font-weight:700; letter-spacing:.06em; text-decoration:none; transition:all .2s; }
+  .btn-calendly:hover { background:#c8dce8; transform:translateY(-1px); }
+  .btn-calendly svg { width:20px; height:20px; fill:currentColor; flex-shrink:0; }
+  .booking-note { color:rgba(255,255,255,.3); font-size:.7rem; letter-spacing:.08em; margin-top:8px; }
+  .contact-divider { display:flex; align-items:center; gap:12px; margin:18px auto; max-width:300px; }
+  .contact-divider::before,.contact-divider::after { content:''; flex:1; height:1px; background:rgba(255,255,255,.12); }
+  .contact-divider span { color:rgba(255,255,255,.3); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; white-space:nowrap; }
+  .contact-btns { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+  .btn-contact { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; transition:all .2s; }
+  .btn-whatsapp { background:#25D366; color:#fff; width:36px; height:36px; border-radius:50%; }
+  .btn-whatsapp:hover { background:#1ebe5a; transform:translateY(-2px); box-shadow:0 4px 16px rgba(37,211,102,.4); }
+  .btn-instagram { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; width:36px; height:36px; border-radius:9px; }
+  .btn-instagram:hover { opacity:.9; transform:translateY(-2px); box-shadow:0 4px 16px rgba(220,39,67,.35); }
+  .btn-contact svg { width:18px; height:18px; fill:currentColor; }
+</style>
+</head>
+<body>
+<div class="loading-overlay" id="loader"><div class="loading-spinner"></div></div>
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-img-wrap"><img src="/logo.png" alt="Nàutic Creus"></div>
+      <div>
+        <div class="logo-name">Nàutic Creus</div>
+        <div class="logo-divider"></div>
+        <div class="logo-tagline">Cleaning Solutions</div>
+      </div>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('ca')" title="Català"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="#FCDD09"/><rect y="2.5" width="20" height="2.5" fill="#DA121A"/><rect y="7.5" width="20" height="2.5" fill="#DA121A"/><rect y="12.5" width="20" height="2.5" fill="#DA121A"/><rect y="17.5" width="20" height="2.5" fill="#DA121A"/></svg> CA</button>
+      <button class="lang-btn" onclick="setLang('es')" title="Castellano"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="#c60b1e"/><rect y="5" width="20" height="10" fill="#ffc400"/></svg> ES</button>
+      <button class="lang-btn" onclick="setLang('en')" title="English"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#012169"/><path d="M0,0 L60,60 M60,0 L0,60" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,60 M60,0 L0,60" stroke="#C8102E" stroke-width="5"/><path d="M30,0 V60 M0,30 H60" stroke="#fff" stroke-width="14"/><path d="M30,0 V60 M0,30 H60" stroke="#C8102E" stroke-width="8"/></svg> EN</button>
+      <button class="lang-btn" onclick="setLang('fr')" title="Français"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="90" fill="#002395"/><rect x="30" width="30" height="90" fill="#fff"/><rect x="60" width="30" height="90" fill="#ED2939"/></svg> FR</button>
+    </div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-deco"></div>
+  <div class="hero-logo"><img src="/logo.png" alt="Nàutic Creus"></div>
+  <h1 data-i18n="hero_title">Tarifes <em id="year-hero">2026</em></h1>
+  <p class="hero-sub" data-i18n="hero_sub">Serveis professionals de neteja i manteniment nàutic</p>
+  <div class="iva-badge" data-i18n="iva_note">Tots els preus inclouen IVA (21%) i desplaçament</div>
+</div>
+<main>
+  <div class="section-label" data-i18n="label_punctual">Serveis puntuals</div>
+  <div class="section-title" data-i18n="title_punctual">Tarifes per servei</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-i18n="col_service">Servei</th>
+        <th><span class="size-header">S</span><span class="size-range">≤ 6 m</span></th>
+        <th><span class="size-header">M</span><span class="size-range">6–8 m</span></th>
+        <th><span class="size-header">L</span><span class="size-range">8–10 m</span></th>
+        <th><span class="size-header">XL</span><span class="size-range">10–12 m</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><td data-i18n="svc_ext">Neteja exterior</td><td><span class="price" id="p-exterior-0"></span></td><td><span class="price" id="p-exterior-1"></span></td><td><span class="price" id="p-exterior-2"></span></td><td><span class="price" id="p-exterior-3"></span></td></tr>
+        <tr style="background:#f8fafc;"><td style="padding-left:28px;font-size:.82rem;color:var(--muted);font-style:italic;" data-i18n="svc_detail_addon">↳ + Detailing (inox, teca, plàstics, cristalls)</td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+65</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+85</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+110</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+145</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td></tr>
+        <tr><td data-i18n="svc_int">Neteja interior</td><td><span class="price" id="p-interior-0"></span></td><td><span class="price" id="p-interior-1"></span></td><td><span class="price" id="p-interior-2"></span></td><td><span class="price" id="p-interior-3"></span></td></tr>
+        <tr><td data-i18n="svc_full">Servei complet<br><span style="font-size:.78rem;color:var(--muted);">(ext + int)</span></td><td><span class="price" id="p-complet-0"></span></td><td><span class="price" id="p-complet-1"></span></td><td><span class="price" id="p-complet-2"></span></td><td><span class="price" id="p-complet-3"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="divider"></div>
+  <div class="section-label" data-i18n="label_plans">Plans de fidelització</div>
+  <div class="section-title" data-i18n="title_plans">Plans mensuals</div>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:18px;font-style:italic;" data-i18n="plans_subtitle">Els plans mensuals inclouen un 10% de descompte, prioritat en reserves i la tranquil·litat de tenir el teu vaixell sempre a punt.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-i18n="col_plan">Pla</th>
+        <th><span class="size-header">S</span><span class="size-range">≤ 6 m</span></th>
+        <th><span class="size-header">M</span><span class="size-range">6–8 m</span></th>
+        <th><span class="size-header">L</span><span class="size-range">8–10 m</span></th>
+        <th><span class="size-header">XL</span><span class="size-range">10–12 m</span></th>
+      </tr></thead>
+      <tbody>
+        <tr class="plan-basic">
+          <td>
+            <span class="plan-name" data-i18n="plan_basic">Bàsic</span>
+            <span class="plan-desc" data-i18n="plan_basic_desc">2× neteja exterior / mes</span>
+            <div class="plan-features">
+              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_travel">Desplaçament inclòs</span></span>
+              <span class="plan-feat"><span class="feat-no">✕</span> <span data-i18n="feat_no_int">Sense interior</span></span>
+              <span class="plan-feat"><span class="feat-no">✕</span> <span data-i18n="feat_no_det">Sense detailing</span></span>
+            </div>
+          </td>
+          <td><span class="price" id="p-basic-0"></span></td><td><span class="price" id="p-basic-1"></span></td>
+          <td><span class="price" id="p-basic-2"></span></td><td><span class="price" id="p-basic-3"></span></td>
+        </tr>
+        <tr class="plan-standard">
+          <td>
+            <span class="plan-name" data-i18n="plan_std">Estàndard</span>
+            <span class="plan-desc" data-i18n="plan_std_desc">1× complet + 1× exterior / mes</span>
+            <div class="plan-features">
+              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_travel">Desplaçament inclòs</span></span>
+              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_int">Neteja interior</span></span>
+              <span class="plan-feat"><span class="feat-no">✕</span> <span data-i18n="feat_no_det">Sense detailing</span></span>
+            </div>
+          </td>
+          <td><span class="price" id="p-standard-0"></span></td><td><span class="price" id="p-standard-1"></span></td>
+          <td><span class="price" id="p-standard-2"></span></td><td><span class="price" id="p-standard-3"></span></td>
+        </tr>
+        <tr class="plan-premium">
+          <td>
+            <span class="plan-name" data-i18n="plan_prem">Premium</span>
+            <span class="plan-desc" data-i18n="plan_prem_desc">2× complet + detailing / mes</span>
+            <div class="plan-features">
+              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_travel">Desplaçament inclòs</span></span>
+              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_int">Neteja interior</span></span>
+              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_det">Detailing</span></span>
+              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_prio">Prioritat reserves</span></span>
+            </div>
+          </td>
+          <td><span class="price" id="p-premium-0"></span></td><td><span class="price" id="p-premium-1"></span></td>
+          <td><span class="price" id="p-premium-2"></span></td><td><span class="price" id="p-premium-3"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="divider"></div>
+  <div class="section-label" data-i18n="label_suppl">Suplements i recàrrecs</div>
+  <div class="section-title" data-i18n="title_suppl">Serveis addicionals</div>
+  <div class="supplements-grid">
+    <div class="supp-card"><span class="supp-name" data-i18n="supp_teak">Tractament / nutrició de teca</span><span class="supp-val">+<span id="s-teak"></span> €</span></div>
+    <div class="supp-card"><span class="supp-name" data-i18n="supp_seal">Impermeabilització teak sealer</span><span class="supp-val">+<span id="s-seal"></span> €</span></div>
+    <div class="supp-card"><span class="supp-name" data-i18n="supp_urgent">Servei urgent i caps de setmana</span><span class="supp-val">+<span id="s-urgent"></span>%</span></div>
+    <div class="supp-card"><span class="supp-name" data-i18n="supp_dirty">Estat inicial molt brut</span><span class="supp-val">+<span id="s-dirty"></span>%</span></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label" data-i18n="label_packs">Packs de serveis</div>
+  <div class="section-title" data-i18n="title_packs">Packs</div>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:4px;" data-i18n="packs_subtitle">Compra un pack i estalvia fins a un 15%</p>
+  <p style="font-size:.82rem;color:var(--muted);font-style:italic;margin-bottom:18px;" data-i18n="packs_any">Vàlid per a qualsevol tipus de servei — exterior, interior o complet.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-i18n="col_pack">Pack</th>
+        <th data-i18n="col_services">Serveis</th>
+        <th data-i18n="col_discount">Descompte</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Pack 3</strong></td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;"><span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ocean);">8%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Pack 5</strong></td>
+          <td style="text-align:center;">5</td>
+          <td style="text-align:center;"><span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ocean);">12%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Pack 10</strong></td>
+          <td style="text-align:center;">10</td>
+          <td style="text-align:center;"><span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ocean);">15%</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.78rem;color:var(--muted);font-style:italic;margin-top:-20px;margin-bottom:6px;" data-i18n="packs_note">Els serveis del pack no caduquen i es poden utilitzar en qualsevol moment.</p>
+  <p style="font-size:.78rem;color:var(--muted);margin-bottom:8px;" data-i18n="packs_price">El preu del pack es calcula sobre el servei escollit. Contacta'ns per al teu pressupost personalitzat.</p>
+
+</div>
+</main>
+<div class="contact-section">
+  <div class="contact-title" data-i18n="contact_title">Reserva el teu <em>servei</em></div>
+  <p class="contact-sub" data-i18n="contact_sub">Demana informació online o contacta'ns directament</p>
+  <a class="contact-phone" href="tel:+34663876778">+34 663 876 778</a>
+  <a class="contact-email-text" href="mailto:info@nauticcreus.com">info@nauticcreus.com</a>
+  <div class="btn-calendly-wrap">
+    <a class="btn-calendly" href="https://calendly.com/rita-suarezf7/30min" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/></svg>
+      <span data-i18n="btn_booking">Sol·licita cita</span>
+    </a>
+    <p class="booking-note" data-i18n="booking_note">Confirmació en menys de 24h</p>
+  </div>
+
+
+</div>
+<footer>
+  <strong>Nàutic Creus</strong> · Cleaning Solutions<br>
+  <span data-i18n="footer_note">Preus vàlids temporada 2026<br>IVA i desplaçament inclosos</span><br><br>
+  <div style="display:flex;justify-content:center;gap:10px;margin-bottom:14px;">
+    <a class="btn-contact btn-whatsapp" href="https://wa.me/34663876778" target="_blank" title="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a class="btn-contact btn-instagram" href="https://instagram.com/nauticcreus" target="_blank" title="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+  </div>
+  <a href="/legal" style="color:rgba(255,255,255,.35);font-size:.7rem;letter-spacing:.06em;" data-i18n="footer_legal">Avís Legal · Privacitat · Cookies</a>
+</footer>
+<script>
+const i18n = {
+  ca: { hero_title:'Tarifes', hero_sub:'Serveis professionals de neteja i&nbsp;manteniment nàutic', iva_note:'Tots els preus inclouen IVA&nbsp;(21%) i&nbsp;desplaçament', label_punctual:'Serveis puntuals', title_punctual:'Tarifes per servei', label_plans:'Plans de fidelització', title_plans:'Plans mensuals', plans_subtitle:'Els plans mensuals inclouen un 10% de descompte, prioritat en reserves i la tranquil·litat de tenir el teu vaixell sempre a punt.', label_suppl:'Suplements i recàrrecs', title_suppl:'Serveis addicionals', col_service:'Servei', col_plan:'Pla', svc_ext:'Neteja exterior', svc_int:'Neteja interior', svc_full:'Servei complet<br><span style="font-size:.78rem;color:var(--muted);">(ext + int)</span>', svc_detail_addon:'↳ + Detailing (inox, teca, plàstics, cristalls)', plan_basic:'Bàsic', plan_basic_desc:'2× neteja exterior / mes', plan_std:'Estàndard', plan_std_desc:'1× complet + 1× exterior / mes', plan_prem:'Premium', plan_prem_desc:'2× complet + detailing / mes', feat_travel:'Desplaçament inclòs', feat_no_int:'Sense interior', feat_no_det:'Sense detailing', feat_int:'Neteja interior', feat_det:'Detailing trimestral', feat_prio:'Prioritat reserves', supp_teak:'Tractament / nutrició de teca', supp_seal:'Impermeabilització teak sealer', supp_urgent:'Servei urgent i caps de setmana', supp_dirty:'Estat inicial molt brut', contact_title:'Reserva el teu servei', contact_sub:'Demana informació online o contacta\'ns directament', btn_booking:'Sol·licita cita', booking_note:'Confirmació en menys de 24h', or_contact:'o contacta directament', btn_call:'Trucar', btn_instagram:'Instagram', btn_whatsapp:'WhatsApp', btn_email:'Email', label_packs:'Packs de serveis', title_packs:'Packs', packs_subtitle:'Compra un pack i estalvia fins a un 15%', packs_any:'Vàlid per a qualsevol tipus de servei — exterior, interior o complet.', col_pack:'Pack', col_services:'Serveis', col_discount:'Descompte', packs_note:'Els serveis del pack no caduquen i es poden utilitzar en qualsevol moment.', packs_price:'El preu del pack es calcula sobre el servei escollit. Contacta\'ns per al teu pressupost personalitzat.', footer_note:'Preus vàlids temporada 2026<br>IVA i desplaçament inclosos', footer_legal:'Avís Legal · Privacitat · Cookies' },
+  es: { hero_title:'Tarifas', hero_sub:'Servicios profesionales de limpieza y mantenimiento náutico', iva_note:'Todos los precios incluyen IVA (21%) y desplazamiento', label_punctual:'Servicios puntuales', title_punctual:'Tarifas por servicio', label_plans:'Planes de fidelización', title_plans:'Planes mensuales', plans_subtitle:'Los planes mensuales incluyen un 10% de descuento, prioridad en reservas y la tranquilidad de tener tu embarcación siempre a punto.', label_suppl:'Suplementos y recargos', title_suppl:'Servicios adicionales', col_service:'Servicio', col_plan:'Plan', svc_ext:'Limpieza exterior', svc_int:'Limpieza interior', svc_full:'Servicio completo (ext + int)', svc_detail_addon:'↳ + Detailing (inox, teca, plásticos, cristales)', plan_basic:'Básico', plan_basic_desc:'2× limpieza exterior / mes', plan_std:'Estándar', plan_std_desc:'1× completo + 1× exterior / mes', plan_prem:'Premium', plan_prem_desc:'2× completo + detailing / mes', feat_travel:'Desplazamiento incluido', feat_no_int:'Sin interior', feat_no_det:'Sin detailing', feat_int:'Limpieza interior', feat_det:'Detailing trimestral', feat_prio:'Prioridad reservas', supp_teak:'Tratamiento / nutrición de teca', supp_seal:'Impermeabilización teak sealer', supp_urgent:'Servicio urgente y fines de semana', supp_dirty:'Estado inicial muy sucio', contact_title:'Reserva tu servicio', contact_sub:'Solicita información online o contáctanos directamente', btn_booking:'Sol·licita cita', booking_note:'Confirmación en menos de 24h', or_contact:'o contacta directamente', btn_call:'Llamar', btn_instagram:'Instagram', btn_whatsapp:'WhatsApp', btn_email:'Email', label_packs:'Packs de servicios', title_packs:'Packs', packs_subtitle:'Compra un pack y ahorra hasta un 15%', packs_any:'Válido para cualquier tipo de servicio — exterior, interior o completo.', col_pack:'Pack', col_services:'Servicios', col_discount:'Descuento', packs_note:'Los servicios del pack no caducan y se pueden usar en cualquier momento.', packs_price:'El precio del pack se calcula sobre el servicio elegido. Contáctanos para tu presupuesto personalizado.', footer_note:'Precios válidos temporada 2026<br>IVA y desplazamiento incluidos', footer_legal:'Aviso Legal · Privacidad · Cookies' },
+  en: { hero_title:'Rates', hero_sub:'Professional boat cleaning and maintenance services', iva_note:'All prices include VAT (21%) and travel', label_punctual:'One-off services', title_punctual:'Service rates', label_plans:'Loyalty plans', title_plans:'Monthly plans', plans_subtitle:'Monthly plans include a 10% discount, priority booking and the peace of mind of keeping your boat always in perfect condition.', label_suppl:'Supplements & surcharges', title_suppl:'Additional services', col_service:'Service', col_plan:'Plan', svc_ext:'Exterior cleaning', svc_int:'Interior cleaning', svc_full:'Full service (ext + int)', svc_detail_addon:'↳ + Detailing (stainless, teak, plastics, glass)', plan_basic:'Basic', plan_basic_desc:'2× exterior cleaning / month', plan_std:'Standard', plan_std_desc:'1× full + 1× exterior / month', plan_prem:'Premium', plan_prem_desc:'2× full + detailing / month', feat_travel:'Travel included', feat_no_int:'No interior', feat_no_det:'No detailing', feat_int:'Interior cleaning', feat_det:'Quarterly detailing', feat_prio:'Priority booking', supp_teak:'Teak treatment / nourishment', supp_seal:'Teak sealer waterproofing', supp_urgent:'Urgent service and weekends', supp_dirty:'Very dirty initial condition', contact_title:'Book your service', contact_sub:'Request information online or contact us directly', btn_booking:'Request appointment', booking_note:'Confirmation within 24h', or_contact:'or contact us directly', btn_call:'Call', btn_instagram:'Instagram', btn_whatsapp:'WhatsApp', btn_email:'Email', label_packs:'Service packs', title_packs:'Packs', packs_subtitle:'Buy a pack and save up to 15%', packs_any:'Valid for any type of service — exterior, interior or full.', col_pack:'Pack', col_services:'Services', col_discount:'Discount', packs_note:'Pack services never expire and can be used at any time.', packs_price:'The pack price is calculated based on the chosen service. Contact us for your personalised quote.', footer_note:'Prices valid season 2026<br>VAT and travel included', footer_legal:'Legal Notice · Privacy · Cookies' },
+  fr: { hero_title:'Tarifs', hero_sub:'Services professionnels de nettoyage et entretien nautique', iva_note:'Tous les prix incluent la TVA (21%) et le déplacement', label_punctual:'Services ponctuels', title_punctual:'Tarifs par service', label_plans:'Plans de fidélisation', title_plans:'Plans mensuels', plans_subtitle:'Les plans mensuels incluent une remise de 10%, la priorité sur les réservations et la tranquillité d\'avoir votre bateau toujours prêt.', label_suppl:'Suppléments et majorations', title_suppl:'Services additionnels', col_service:'Service', col_plan:'Plan', svc_ext:'Nettoyage extérieur', svc_int:'Nettoyage intérieur', svc_full:'Service complet (ext + int)', svc_detail_addon:'↳ + Detailing (inox, teck, plastiques, vitres)', plan_basic:'Basique', plan_basic_desc:'2× extérieur / mois', plan_std:'Standard', plan_std_desc:'1× complet + 1× extérieur / mois', plan_prem:'Premium', plan_prem_desc:'2× complet + detailing / mois', feat_travel:'Déplacement inclus', feat_no_int:'Sans intérieur', feat_no_det:'Sans detailing', feat_int:'Nettoyage intérieur', feat_det:'Detailing trimestriel', feat_prio:'Priorité réservations', supp_teak:'Traitement / nutrition du teck', supp_seal:'Imperméabilisation teak sealer', supp_urgent:'Service urgent et week-ends', supp_dirty:'État initial très sale', contact_title:'Réserver votre service', contact_sub:'Demandez des informations en ligne ou contactez-nous', btn_booking:'Demander un rendez-vous', booking_note:'Confirmation sous 24h', or_contact:'ou contactez-nous directement', btn_call:'Appeler', btn_instagram:'Instagram', btn_whatsapp:'WhatsApp', btn_email:'Email', label_packs:'Packs de services', title_packs:'Packs', packs_subtitle:'Achetez un pack et économisez jusqu\'à 15%', packs_any:'Valable pour tout type de service — extérieur, intérieur ou complet.', col_pack:'Pack', col_services:'Services', col_discount:'Remise', packs_note:'Les services du pack n\'expirent pas et peuvent être utilisés à tout moment.', packs_price:'Le prix du pack est calculé sur le service choisi. Contactez-nous pour votre devis personnalisé.', footer_note:'Prix valables saison 2026<br>TVA et déplacement inclus', footer_legal:'Mentions légales · Confidentialité · Cookies' }
+};
+function setLang(lang) {
+  const t = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn =>
+    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"))
+  );
+  document.documentElement.lang = lang;
+}
+function renderPrices(data) {
+  const year = data.year || 2026;
+  ['year-hero','year-footer'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=year; });
+  const pMap = { 'exterior':data.punctual.exterior,'interior':data.punctual.interior,'complet':data.punctual.complet,'basic':data.plans.basic,'standard':data.plans.standard,'premium':data.plans.premium };
+  for (const [key, vals] of Object.entries(pMap)) vals.forEach((v,i) => { const el=document.getElementById('p-'+key+'-'+i); if(el) el.textContent=v; });
+  const s = {dirty:'s-dirty',urgent:'s-urgent',teak:'s-teak',seal:'s-seal'};
+  for (const [k,id] of Object.entries(s)) { const el=document.getElementById(id); if(el) el.textContent=data.supplements[k]; }
+}
+async function loadPrices() {
+  try {
+    const res = await fetch('/api/prices');
+    const data = await res.json();
+    renderPrices(data);
+  } catch(e) {
+    renderPrices({
+      punctual:{ exterior:[180,240,310,400], interior:[170,220,280,360], complet:[290,390,520,670] },
+      plans:{ basic:[324,432,558,720], standard:[423,567,747,963], premium:[740,981,1305,1665] },
+      supplements:{ dirty:10, urgent:15, teak:45, seal:55 },
+      year:2026
+    });
+  } finally {
+    document.getElementById('loader').classList.add('hidden');
+  }
+}
+const nav = (navigator.language||'ca').toLowerCase().slice(0,2);
+setLang(['ca','es','en','fr'].includes(nav)?nav:'ca');
+loadPrices();
+</script>
+</body>
+</html>7; --ocean:#1a4a6e; --sea:#2e7daa;
     --gold:#d0dde6; --sand:#f5f0e8; --white:#ffffff;
     --text:#1a2b3c; --muted:#6b8699; --silver:#c8c8d4;
   }
