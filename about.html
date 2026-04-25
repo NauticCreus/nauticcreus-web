@@ -9,7 +9,184 @@
   :root {
     --navy:#0d2137; --ocean:#1a4a6e; --sea:#2e7daa;
     --gold:#e8eef2; --sand:#f5f0e8; --white:#ffffff;
+    --text:#1a2b3c; --muted:#6b8<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nàutic Creus · Sobre nosaltres</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0d2137; --ocean:#1a4a6e; --sea:#2e7daa;
+    --gold:#e8eef2; --sand:#f5f0e8; --white:#ffffff;
     --text:#1a2b3c; --muted:#6b8699; --silver:#c8c8d4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--sand); color:var(--text); min-height:100vh; }
+  header { background:var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 2px 24px rgba(0,0,0,.35); }
+  .header-inner { max-width:920px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 24px; gap:16px; }
+  .logo { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .logo-img-wrap { width:52px; height:52px; border-radius:50%; overflow:hidden; border:1.5px solid rgba(232,238,242,.5); flex-shrink:0; }
+  .logo-img-wrap img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+  .logo-name { font-family:'Cormorant Garamond',serif; color:var(--silver); font-size:1.25rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase; line-height:1; }
+  .logo-divider { width:100%; height:1px; background:linear-gradient(90deg,rgba(232,238,242,.7),transparent); margin:4px 0 3px; }
+  .logo-tagline { color:rgba(232,238,242,.9); font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; }
+  .lang-switcher { display:flex; gap:3px; background:rgba(255,255,255,.07); border-radius:8px; padding:4px; }
+  .lang-btn { background:none; border:none; color:rgba(255,255,255,.6); font-family:'DM Sans',sans-serif; font-size:.75rem; font-weight:500; letter-spacing:.04em; padding:4px 8px; border-radius:5px; cursor:pointer; transition:all .18s; display:inline-flex; align-items:center; gap:6px; }
+  .lang-btn svg { width:18px; height:18px; border-radius:50%; overflow:hidden; flex-shrink:0; box-shadow:0 1px 3px rgba(0,0,0,.3); }
+  .lang-btn:hover { color:#fff; background:rgba(255,255,255,.1); }
+  .lang-btn.active { background:var(--gold); color:var(--navy); font-weight:600; }
+  .nav-link { color:rgba(200,200,210,.55); font-family:'DM Sans',sans-serif; font-size:.78rem; font-weight:400; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; padding:6px 10px; border-radius:5px; transition:all .18s; white-space:nowrap; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); }
+  .nav-link:hover { color:rgba(255,255,255,.85); background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.18); }
+  .hero { background:linear-gradient(160deg,var(--navy) 0%,#163352 55%,#1e5a82 100%); padding:52px 24px; text-align:center; position:relative; overflow:hidden; }
+  .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:56px; background:var(--sand); clip-path:ellipse(58% 100% at 50% 100%); }
+  .hero-deco { position:absolute; inset:0; background-image:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(232,238,242,.04) 48px,rgba(232,238,242,.04) 49px); pointer-events:none; }
+  .hero-logo { width:96px; height:96px; border-radius:50%; overflow:hidden; border:2px solid rgba(232,238,242,.4); margin:0 auto 20px; box-shadow:0 0 40px rgba(232,238,242,.15),0 8px 32px rgba(0,0,0,.4); position:relative; z-index:1; }
+  .hero-logo img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+  .hero h1 { font-family:'Cormorant Garamond',serif; color:#fff; font-size:clamp(2rem,6vw,3.2rem); font-weight:300; letter-spacing:.04em; margin-bottom:8px; position:relative; z-index:1; }
+  .hero h1 em { font-style:normal; color:var(--gold); font-weight:600; }
+  .hero-sub { color:rgba(255,255,255,.6); font-size:.82rem; font-weight:300; letter-spacing:.1em; text-transform:uppercase; position:relative; z-index:1; }
+  main { max-width:920px; margin:0 auto; padding:48px 20px 64px; }
+  .section-label { font-size:.68rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--sea); margin-bottom:6px; }
+  .section-title { font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:600; color:var(--navy); margin-bottom:24px; display:flex; align-items:center; gap:10px; }
+  .section-title::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(13,33,55,.2),transparent); }
+  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  .about-text p { font-size:.92rem; line-height:1.85; color:#2a3d4f; margin-bottom:18px; }
+  .about-text p:last-child { margin-bottom:0; }
+  .about-images { display:grid; grid-template-columns:1fr; gap:16px; }
+  .about-img { width:100%; border-radius:14px; overflow:hidden; box-shadow:0 4px 24px rgba(13,33,55,.12); }
+  .about-img img { width:100%; height:260px; object-fit:cover; display:block; }
+  .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--sea); font-size:.8rem; font-weight:500; letter-spacing:.06em; text-decoration:none; text-transform:uppercase; margin-bottom:32px; transition:opacity .18s; }
+  .back-link:hover { opacity:.7; }
+  .back-link svg { width:16px; height:16px; fill:currentColor; }
+  footer { background:var(--navy); color:rgba(255,255,255,.45); text-align:center; padding:22px 24px; font-size:.76rem; letter-spacing:.04em; }
+  footer strong { color:var(--gold); font-weight:500; }
+  footer a { color:rgba(255,255,255,.35); text-decoration:none; }
+  footer a:hover { color:var(--gold); }
+  .btn-contact { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; transition:all .2s; }
+  .btn-whatsapp { background:#25D366; color:#fff; width:36px; height:36px; border-radius:50%; }
+  .btn-whatsapp:hover { background:#1ebe5a; transform:translateY(-2px); }
+  .btn-instagram { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; width:36px; height:36px; border-radius:9px; }
+  .btn-instagram:hover { opacity:.9; transform:translateY(-2px); }
+  .btn-contact svg { width:18px; height:18px; fill:currentColor; }
+  @media(max-width:680px) { .about-grid { grid-template-columns:1fr; } .about-images { grid-template-columns:1fr 1fr; } }
+  @media(max-width:540px) { .header-inner { flex-wrap:wrap; justify-content:center; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">
+      <div class="logo-img-wrap"><img src="/logo.png" alt="Nàutic Creus"></div>
+      <div>
+        <div class="logo-name">Nàutic Creus</div>
+        <div class="logo-divider"></div>
+        <div class="logo-tagline">Cleaning Solutions</div>
+      </div>
+    </a>
+    <a class="nav-link" href="/" id="nav-rates" data-i18n="nav_rates">Tarifes</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('ca')" title="Català"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="#FCDD09"/><rect y="2.5" width="20" height="2.5" fill="#DA121A"/><rect y="7.5" width="20" height="2.5" fill="#DA121A"/><rect y="12.5" width="20" height="2.5" fill="#DA121A"/><rect y="17.5" width="20" height="2.5" fill="#DA121A"/></svg> CA</button>
+      <button class="lang-btn" onclick="setLang('es')" title="Castellano"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="#c60b1e"/><rect y="5" width="20" height="10" fill="#ffc400"/></svg> ES</button>
+      <button class="lang-btn" onclick="setLang('en')" title="English"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#012169"/><path d="M0,0 L60,60 M60,0 L0,60" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,60 M60,0 L0,60" stroke="#C8102E" stroke-width="5"/><path d="M30,0 V60 M0,30 H60" stroke="#fff" stroke-width="14"/><path d="M30,0 V60 M0,30 H60" stroke="#C8102E" stroke-width="8"/></svg> EN</button>
+      <button class="lang-btn" onclick="setLang('fr')" title="Français"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="90" fill="#002395"/><rect x="30" width="30" height="90" fill="#fff"/><rect x="60" width="30" height="90" fill="#ED2939"/></svg> FR</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-deco"></div>
+  <div class="hero-logo"><img src="/logo.png" alt="Nàutic Creus"></div>
+  <h1 data-i18n="hero_title">Sobre <em>Nàutic Creus</em></h1>
+  <p class="hero-sub" data-i18n="hero_sub">Neteja nàutica professional a la Costa Brava</p>
+</div>
+
+<main>
+  <a class="back-link" href="/" data-i18n-href="/">
+    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    <span data-i18n="back_link">Tornar a les tarifes</span>
+  </a>
+
+  <div class="section-label" data-i18n="label_about">Qui som</div>
+  <div class="section-title" data-i18n="title_about">Sobre Nàutic Creus</div>
+
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="about-lang" id="about-ca">
+        <p>Nàutic Creus va néixer a una cala del Cap de Creus — l'indret on el sol surt abans que a cap altre lloc de Catalunya. Un paisatge únic, abrupte i lluminós, que ens va inspirar des del primer moment. Va ser allà, parlant amb armadors i navegants de la zona, que vam confirmar el que ja intuíem: faltava un servei de neteja nàutica professional i de qualitat a la Costa Brava, i no érem els únics que el buscàvem sense trobar-lo. Vam decidir ser-ne la solució — i vam posar el Cap de Creus al capdavant del nom com a homenatge a aquell racó salvatge que va ser el bressol d'aquest projecte.</p>
+        <p>Entenem que una embarcació no és només un vehicle. És una inversió, un espai de llibertat i, sovint, una passió. Per això mereix una atenció que vagi més enllà d'una neteja superficial. El nostre compromís és tractar cada vaixell amb la cura i el rigor que es mereix, com si fos el nostre.</p>
+        <p>Operem al llarg del litoral català, organitzant el nostre calendari per poder arribar a quasi tots els ports de la costa. La idea és senzilla: tu gaudeixes del mar i del teu temps, nosaltres ens ocupem de la resta.</p>
+        <p>Treballem amb els millors productes del mercat, seleccionats per la seva eficàcia i pel seu respecte amb el medi ambient marí. Perquè entenem la importància del que hi ha sota les aigües cristal·lines de la Costa Brava — i estem compromesos a preservar-ho. Cada servei que fem és també un acte de cura envers el mar que estimem.</p>
+      </div>
+      <div class="about-lang" id="about-es" style="display:none">
+        <p>Nàutic Creus nació en una cala del Cap de Creus — el lugar donde el sol sale antes que en ningún otro punto de Cataluña. Un paisaje único, abrupto y luminoso, que nos inspiró desde el primer momento. Fue allí, hablando con armadores y navegantes de la zona, que confirmamos lo que ya intuíamos: faltaba un servicio de limpieza náutica profesional y de calidad en la Costa Brava, y no éramos los únicos que lo buscábamos sin encontrarlo. Decidimos ser la solución — y pusimos el Cap de Creus al frente del nombre como homenaje al rincón salvaje que fue la cuna de este proyecto.</p>
+        <p>Entendemos que una embarcación no es solo un vehículo. Es una inversión, un espacio de libertad y, a menudo, una pasión. Por eso merece una atención que vaya más allá de una limpieza superficial. Nuestro compromiso es tratar cada barco con el cuidado y el rigor que merece, como si fuera el nuestro.</p>
+        <p>Operamos a lo largo del litoral catalán, organizando nuestro calendario para poder llegar a casi todos los puertos de la costa. La idea es sencilla: tú disfrutas del mar y de tu tiempo, nosotros nos encargamos del resto.</p>
+        <p>Trabajamos con los mejores productos del mercado, seleccionados por su eficacia y por su respeto con el medio ambiente marino. Porque entendemos la importancia de lo que hay bajo las aguas cristalinas de la Costa Brava — y estamos comprometidos a preservarlo. Cada servicio que realizamos es también un acto de cuidado hacia el mar que amamos.</p>
+      </div>
+      <div class="about-lang" id="about-en" style="display:none">
+        <p>Nàutic Creus was born in a cove of Cap de Creus — the place where the sun rises before anywhere else in Catalonia. A unique, rugged and luminous landscape that inspired us from the very beginning. It was there, talking with boat owners and sailors in the area, that we confirmed what we already sensed: there was no professional, high-quality boat cleaning service on the Costa Brava, and we were not the only ones looking for it without success. We decided to become the solution — and we placed Cap de Creus at the heart of our name as a tribute to the wild corner where this project began.</p>
+        <p>We understand that a vessel is not just a vehicle. It is an investment, a space of freedom and, often, a passion. That is why it deserves attention that goes beyond a superficial clean. Our commitment is to treat every boat with the care and rigour it deserves, as if it were our own.</p>
+        <p>We operate along the Catalan coastline, organising our schedule to reach almost every port along the coast. The idea is simple: you enjoy the sea and your time, we take care of the rest.</p>
+        <p>We work with the best products on the market, chosen for their effectiveness and their respect for the marine environment. Because we understand the importance of what lies beneath the crystal-clear waters of the Costa Brava — and we are committed to preserving it. Every service we carry out is also an act of care for the sea we love.</p>
+      </div>
+      <div class="about-lang" id="about-fr" style="display:none">
+        <p>Nàutic Creus est né dans une crique du Cap de Creus — l'endroit où le soleil se lève avant partout ailleurs en Catalogne. Un paysage unique, sauvage et lumineux, qui nous a inspirés dès le premier instant. C'est là, en discutant avec des propriétaires de bateaux et des navigateurs de la région, que nous avons confirmé ce que nous pressentions déjà : il manquait un service de nettoyage nautique professionnel et de qualité sur la Costa Brava, et nous n'étions pas les seuls à le chercher sans le trouver. Nous avons décidé d'en être la solution — et nous avons placé le Cap de Creus au cœur de notre nom en hommage au coin sauvage qui fut le berceau de ce projet.</p>
+        <p>Nous comprenons qu'une embarcation n'est pas seulement un véhicule. C'est un investissement, un espace de liberté et, souvent, une passion. C'est pourquoi elle mérite une attention qui va au-delà d'un simple nettoyage. Notre engagement est de traiter chaque bateau avec le soin et la rigueur qu'il mérite, comme s'il était le nôtre.</p>
+        <p>Nous opérons tout au long du littoral catalan, en organisant notre calendrier pour pouvoir atteindre presque tous les ports de la côte. L'idée est simple : vous profitez de la mer et de votre temps, nous nous occupons du reste.</p>
+        <p>Nous travaillons avec les meilleurs produits du marché, sélectionnés pour leur efficacité et leur respect de l'environnement marin. Car nous comprenons l'importance de ce qui se trouve sous les eaux cristallines de la Costa Brava — et nous sommes engagés à le préserver. Chaque service que nous réalisons est aussi un acte d'amour envers la mer que nous chérissons.</p>
+      </div>
+    </div>
+    <div class="about-images">
+      <div class="about-img"><img src="/foto1.png" alt="Nàutic Creus - Costa Brava"></div>
+      <div class="about-img"><img src="/foto2.png" alt="Nàutic Creus - Litoral català"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <strong>Nàutic Creus</strong> · Cleaning Solutions<br><br>
+  <div style="display:flex;justify-content:center;gap:10px;margin-bottom:14px;">
+    <a class="btn-contact btn-whatsapp" href="https://wa.me/34663876778" target="_blank" title="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a class="btn-contact btn-instagram" href="https://instagram.com/nauticcreus" target="_blank" title="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+  </div>
+  <a href="/legal" style="color:rgba(255,255,255,.35);font-size:.7rem;letter-spacing:.06em;">Avís Legal · Privacitat · Cookies</a>
+</footer>
+
+<script>
+const i18n = {
+  ca: { hero_title:'Sobre Nàutic Creus', hero_sub:'Neteja nàutica professional a la Costa Brava', label_about:'Qui som', title_about:'Sobre Nàutic Creus', nav_rates:'Tarifes', back_link:'Tornar a les tarifes' },
+  es: { hero_title:'Sobre Nàutic Creus', hero_sub:'Limpieza náutica profesional en la Costa Brava', label_about:'Quiénes somos', title_about:'Sobre Nàutic Creus', nav_rates:'Tarifas', back_link:'Volver a las tarifas' },
+  en: { hero_title:'About Nàutic Creus', hero_sub:'Professional boat cleaning on the Costa Brava', label_about:'About us', title_about:'About Nàutic Creus', nav_rates:'Rates', back_link:'Back to rates' },
+  fr: { hero_title:'À propos de Nàutic Creus', hero_sub:'Nettoyage nautique professionnel sur la Costa Brava', label_about:'Qui sommes-nous', title_about:'À propos de Nàutic Creus', nav_rates:'Tarifs', back_link:'Retour aux tarifs' }
+};
+
+function setLang(lang) {
+  const t = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn =>
+    btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"))
+  );
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.about-lang').forEach(el => el.style.display = 'none');
+  const aboutEl = document.getElementById('about-' + lang);
+  if (aboutEl) aboutEl.style.display = 'block';
+}
+
+const nav = (navigator.language||'ca').toLowerCase().slice(0,2);
+setLang(['ca','es','en','fr'].includes(nav)?nav:'ca');
+</script>
+</body>
+</html>
+699; --silver:#c8c8d4;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'DM Sans',sans-serif; background:var(--sand); color:var(--text); min-height:100vh; }
