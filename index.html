@@ -8,7 +8,7 @@
 <style>
   :root {
     --navy:#0d2137; --ocean:#1a4a6e; --sea:#2e7daa;
-    --gold:#b8975a; --sand:#f5f0e8; --white:#ffffff;
+    --gold:#a8b8c4; --sand:#f5f0e8; --white:#ffffff;
     --text:#1a2b3c; --muted:#6b8699; --silver:#c8c8d4;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -16,11 +16,11 @@
   header { background:var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 2px 24px rgba(0,0,0,.35); }
   .header-inner { max-width:920px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 24px; gap:16px; }
   .logo { display:flex; align-items:center; gap:14px; }
-  .logo-img-wrap { width:52px; height:52px; border-radius:50%; overflow:hidden; border:1.5px solid rgba(184,151,90,.5); flex-shrink:0; }
+  .logo-img-wrap { width:52px; height:52px; border-radius:50%; overflow:hidden; border:1.5px solid rgba(168,184,196,.5); flex-shrink:0; }
   .logo-img-wrap img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
   .logo-name { font-family:'Cormorant Garamond',serif; color:var(--silver); font-size:1.25rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase; line-height:1; }
-  .logo-divider { width:100%; height:1px; background:linear-gradient(90deg,rgba(184,151,90,.7),transparent); margin:4px 0 3px; }
-  .logo-tagline { color:rgba(184,151,90,.9); font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; }
+  .logo-divider { width:100%; height:1px; background:linear-gradient(90deg,rgba(168,184,196,.7),transparent); margin:4px 0 3px; }
+  .logo-tagline { color:rgba(168,184,196,.9); font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; }
   .lang-switcher { display:flex; gap:3px; background:rgba(255,255,255,.07); border-radius:8px; padding:4px; }
   .lang-btn { background:none; border:none; color:rgba(255,255,255,.6); font-family:'DM Sans',sans-serif; font-size:.75rem; font-weight:500; letter-spacing:.04em; padding:4px 8px; border-radius:5px; cursor:pointer; transition:all .18s; display:inline-flex; align-items:center; gap:6px; }
   .lang-btn svg { width:18px; height:18px; border-radius:50%; overflow:hidden; flex-shrink:0; box-shadow:0 1px 3px rgba(0,0,0,.3); }
@@ -28,13 +28,13 @@
   .lang-btn.active { background:var(--gold); color:var(--navy); font-weight:600; }
   .hero { background:linear-gradient(160deg,var(--navy) 0%,#163352 55%,#1e5a82 100%); padding:52px 24px; text-align:center; position:relative; overflow:hidden; }
   .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:56px; background:var(--sand); clip-path:ellipse(58% 100% at 50% 100%); }
-  .hero-deco { position:absolute; inset:0; background-image:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(184,151,90,.04) 48px,rgba(184,151,90,.04) 49px); pointer-events:none; }
-  .hero-logo { width:96px; height:96px; border-radius:50%; overflow:hidden; border:2px solid rgba(184,151,90,.4); margin:0 auto 20px; box-shadow:0 0 40px rgba(184,151,90,.15),0 8px 32px rgba(0,0,0,.4); position:relative; z-index:1; }
+  .hero-deco { position:absolute; inset:0; background-image:repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(168,184,196,.04) 48px,rgba(168,184,196,.04) 49px); pointer-events:none; }
+  .hero-logo { width:96px; height:96px; border-radius:50%; overflow:hidden; border:2px solid rgba(168,184,196,.4); margin:0 auto 20px; box-shadow:0 0 40px rgba(168,184,196,.15),0 8px 32px rgba(0,0,0,.4); position:relative; z-index:1; }
   .hero-logo img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
   .hero h1 { font-family:'Cormorant Garamond',serif; color:#fff; font-size:clamp(2rem,6vw,3.2rem); font-weight:300; letter-spacing:.04em; margin-bottom:8px; position:relative; z-index:1; }
   .hero h1 em { font-style:normal; color:var(--gold); font-weight:600; }
   .hero-sub { color:rgba(255,255,255,.6); font-size:.82rem; font-weight:300; letter-spacing:.1em; text-transform:uppercase; position:relative; z-index:1; }
-  .iva-badge { display:inline-flex; align-items:center; background:rgba(184,151,90,.15); border:1px solid rgba(184,151,90,.35); color:var(--gold); font-size:.72rem; letter-spacing:.1em; padding:5px 14px; border-radius:20px; margin-top:14px; text-transform:uppercase; position:relative; z-index:1; }
+  .iva-badge { display:inline-flex; align-items:center; background:rgba(168,184,196,.15); border:1px solid rgba(168,184,196,.35); color:var(--gold); font-size:.72rem; letter-spacing:.1em; padding:5px 14px; border-radius:20px; margin-top:14px; text-transform:uppercase; position:relative; z-index:1; }
   main { max-width:920px; margin:0 auto; padding:36px 20px 64px; }
   .section-label { font-size:.68rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--sea); margin-bottom:6px; }
   .section-title { font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:600; color:var(--navy); margin-bottom:18px; display:flex; align-items:center; gap:10px; }
@@ -69,7 +69,7 @@
   .divider { height:1px; background:linear-gradient(90deg,transparent,rgba(13,33,55,.12),transparent); margin:28px 0; }
   .loading-overlay { position:fixed; inset:0; background:var(--navy); display:flex; align-items:center; justify-content:center; z-index:999; transition:opacity .4s; }
   .loading-overlay.hidden { opacity:0; pointer-events:none; }
-  .loading-spinner { width:40px; height:40px; border:2px solid rgba(184,151,90,.3); border-top-color:var(--gold); border-radius:50%; animation:spin .8s linear infinite; }
+  .loading-spinner { width:40px; height:40px; border:2px solid rgba(168,184,196,.3); border-top-color:var(--gold); border-radius:50%; animation:spin .8s linear infinite; }
   @keyframes spin { to { transform:rotate(360deg); } }
   footer { background:var(--navy); color:rgba(255,255,255,.45); text-align:center; padding:22px 24px; font-size:.76rem; letter-spacing:.04em; }
   footer strong { color:var(--gold); font-weight:500; }
@@ -86,7 +86,7 @@
   .contact-email-text:hover { color:var(--gold); }
   .btn-calendly-wrap { margin-bottom:20px; }
   .btn-calendly { display:inline-flex; align-items:center; gap:9px; padding:15px 32px; border-radius:10px; background:var(--gold); color:var(--navy); font-family:'DM Sans',sans-serif; font-size:.92rem; font-weight:700; letter-spacing:.06em; text-decoration:none; transition:all .2s; }
-  .btn-calendly:hover { background:#c9a86a; transform:translateY(-1px); }
+  .btn-calendly:hover { background:#8fa4b4; transform:translateY(-1px); }
   .btn-calendly svg { width:20px; height:20px; fill:currentColor; flex-shrink:0; }
   .booking-note { color:rgba(255,255,255,.3); font-size:.7rem; letter-spacing:.08em; margin-top:8px; }
   .contact-divider { display:flex; align-items:center; gap:12px; margin:18px auto; max-width:300px; }
