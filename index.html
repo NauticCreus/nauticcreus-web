@@ -107,6 +107,7 @@
   .about-images { display:grid; grid-template-columns:1fr; gap:16px; }
   .about-img { width:100%; border-radius:14px; overflow:hidden; box-shadow:0 4px 24px rgba(13,33,55,.12); }
   .about-img img { width:100%; height:220px; object-fit:cover; display:block; }
+  .price-fixed { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:600; color:var(--ocean); white-space:nowrap; }
   @media(max-width:680px) { .about-grid { grid-template-columns:1fr; } .about-images { grid-template-columns:1fr 1fr; } }
 </style>
 </head>
@@ -115,9 +116,9 @@
 <header>
   <div class="header-inner">
     <div class="logo">
-      <div class="logo-img-wrap"><img src="/logo.png" alt="Nàutic Creus"></div>
+      <div class="logo-img-wrap"><img src="/logo.png" alt="Nautic Creus"></div>
       <div>
-        <div class="logo-name">Nàutic Creus</div>
+        <div class="logo-name">Nautic Creus</div>
         <div class="logo-divider"></div>
         <div class="logo-tagline">Cleaning Solutions</div>
       </div>
@@ -128,19 +129,19 @@
       <span data-i18n="btn_contact" style="font-size:.72rem;letter-spacing:.04em;">Contacta</span>
     </a>
     <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('ca')" title="Català"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="#FCDD09"/><rect y="2.5" width="20" height="2.5" fill="#DA121A"/><rect y="7.5" width="20" height="2.5" fill="#DA121A"/><rect y="12.5" width="20" height="2.5" fill="#DA121A"/><rect y="17.5" width="20" height="2.5" fill="#DA121A"/></svg> CA</button>
+      <button class="lang-btn active" onclick="setLang('ca')" title="Catala"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="#FCDD09"/><rect y="2.5" width="20" height="2.5" fill="#DA121A"/><rect y="7.5" width="20" height="2.5" fill="#DA121A"/><rect y="12.5" width="20" height="2.5" fill="#DA121A"/><rect y="17.5" width="20" height="2.5" fill="#DA121A"/></svg> CA</button>
       <button class="lang-btn" onclick="setLang('es')" title="Castellano"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="#c60b1e"/><rect y="5" width="20" height="10" fill="#ffc400"/></svg> ES</button>
       <button class="lang-btn" onclick="setLang('en')" title="English"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#012169"/><path d="M0,0 L60,60 M60,0 L0,60" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,60 M60,0 L0,60" stroke="#C8102E" stroke-width="5"/><path d="M30,0 V60 M0,30 H60" stroke="#fff" stroke-width="14"/><path d="M30,0 V60 M0,30 H60" stroke="#C8102E" stroke-width="8"/></svg> EN</button>
-      <button class="lang-btn" onclick="setLang('fr')" title="Français"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="90" fill="#002395"/><rect x="30" width="30" height="90" fill="#fff"/><rect x="60" width="30" height="90" fill="#ED2939"/></svg> FR</button>
+      <button class="lang-btn" onclick="setLang('fr')" title="Francais"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="90" fill="#002395"/><rect x="30" width="30" height="90" fill="#fff"/><rect x="60" width="30" height="90" fill="#ED2939"/></svg> FR</button>
     </div>
   </div>
 </header>
 <div class="hero">
   <div class="hero-deco"></div>
-  <div class="hero-logo"><img src="/logo.png" alt="Nàutic Creus"></div>
+  <div class="hero-logo"><img src="/logo.png" alt="Nautic Creus"></div>
   <h1 data-i18n="hero_title">Tarifes <em id="year-hero">2026</em></h1>
-  <p class="hero-sub" data-i18n="hero_sub">Serveis professionals de neteja i manteniment nàutic</p>
-  <div class="iva-badge" data-i18n="iva_note">Tots els preus inclouen IVA (21%) i desplaçament</div>
+  <p class="hero-sub" data-i18n="hero_sub">Serveis professionals de neteja i&nbsp;manteniment nautic</p>
+  <div class="iva-badge" data-i18n="iva_note">Tots els preus inclouen IVA&nbsp;(21%) i&nbsp;desplacament</div>
 </div>
 <main>
   <div class="section-label" data-i18n="label_punctual">Serveis puntuals</div>
@@ -148,44 +149,51 @@
   <div class="table-wrap">
     <table>
       <thead><tr>
-        <th style="vertical-align:bottom;text-align:left;"><span data-i18n="col_service">Servei</span><br><span class="size-eslora" data-i18n="col_eslora">Eslora →</span></th>
-        <th><span class="size-header">S</span><span class="size-range">≤ 6 m</span></th>
-        <th><span class="size-header">M</span><span class="size-range">6–8 m</span></th>
-        <th><span class="size-header">L</span><span class="size-range">8–10 m</span></th>
-        <th><span class="size-header">XL</span><span class="size-range">10–12 m</span></th>
+        <th style="vertical-align:bottom;text-align:left;"><span data-i18n="col_service">Servei</span><br><span class="size-eslora" data-i18n="col_eslora">Eslora &rarr;</span></th>
+        <th><span class="size-header">S</span><span class="size-range">&le; 6 m</span></th>
+        <th><span class="size-header">M</span><span class="size-range">6&ndash;8 m</span></th>
+        <th><span class="size-header">L</span><span class="size-range">8&ndash;10 m</span></th>
+        <th><span class="size-header">XL</span><span class="size-range">10&ndash;12 m</span></th>
         <th><span class="size-header">XXL</span><span class="size-range">&gt; 12 m</span></th>
       </tr></thead>
       <tbody>
         <tr><td data-i18n="svc_ext">Neteja exterior</td><td><span class="price" id="p-exterior-0"></span></td><td><span class="price" id="p-exterior-1"></span></td><td><span class="price" id="p-exterior-2"></span></td><td><span class="price" id="p-exterior-3"></span></td><td style="text-align:center;font-size:.8rem;color:var(--muted);font-style:italic;" data-i18n="xxl_consult">A consultar</td></tr>
-        <tr style="background:#f8fafc;"><td style="padding-left:28px;font-size:.82rem;color:var(--muted);font-style:italic;" data-i18n="svc_detail_addon">↳ + Detailing (inox, plàstics, cristalls)</td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+65</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+85</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+110</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+145</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> €</span></td><td style="text-align:center;font-size:.8rem;color:var(--muted);font-style:italic;" data-i18n="xxl_consult">A consultar</td></tr>
+        <tr style="background:#f8fafc;"><td style="padding-left:28px;font-size:.82rem;color:var(--muted);font-style:italic;" data-i18n="svc_detail_addon">&#8627; + Detailing (inox, plastics, cristalls)</td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+65</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> &euro;</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+85</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> &euro;</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+110</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> &euro;</span></td><td><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--sea);">+145</span><span style="font-size:.65rem;color:var(--muted);font-family:'DM Sans',sans-serif;"> &euro;</span></td><td style="text-align:center;font-size:.8rem;color:var(--muted);font-style:italic;" data-i18n="xxl_consult">A consultar</td></tr>
         <tr><td data-i18n="svc_int">Neteja interior</td><td><span class="price" id="p-interior-0"></span></td><td><span class="price" id="p-interior-1"></span></td><td><span class="price" id="p-interior-2"></span></td><td><span class="price" id="p-interior-3"></span></td><td style="text-align:center;font-size:.8rem;color:var(--muted);font-style:italic;" data-i18n="xxl_consult">A consultar</td></tr>
         <tr><td data-i18n="svc_full">Servei complet<br><span style="font-size:.78rem;color:var(--muted);">(ext + int)</span></td><td><span class="price" id="p-complet-0"></span></td><td><span class="price" id="p-complet-1"></span></td><td><span class="price" id="p-complet-2"></span></td><td><span class="price" id="p-complet-3"></span></td><td style="text-align:center;font-size:.8rem;color:var(--muted);font-style:italic;" data-i18n="xxl_consult">A consultar</td></tr>
+        <tr><td data-i18n="svc_rinse">Rentat amb aigua dolca (eliminacio de sal)</td>
+          <td><span class="price-fixed">45,00 &euro;</span></td>
+          <td><span class="price-fixed">50,00 &euro;</span></td>
+          <td><span class="price-fixed">60,50 &euro;</span></td>
+          <td><span class="price-fixed">72,60 &euro;</span></td>
+          <td style="text-align:center;font-size:.8rem;color:var(--muted);font-style:italic;" data-i18n="xxl_consult">A consultar</td>
+        </tr>
       </tbody>
     </table>
   </div>
   <div class="divider"></div>
-  <div class="section-label" data-i18n="label_plans">Plans de fidelització</div>
-  <div class="section-title" data-i18n="title_plans">Plans mensuals <span style="font-size:.7rem;font-weight:400;font-family:'DM Sans',sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">· especial charters</span></div>
-  <p style="font-size:.85rem;color:var(--muted);margin-bottom:18px;font-style:italic;" data-i18n="plans_subtitle">Els plans mensuals inclouen un 10% de descompte, prioritat en reserves i la tranquil·litat de tenir el teu vaixell sempre a punt.</p>
+  <div class="section-label" data-i18n="label_plans">Plans de fidelitzacio</div>
+  <div class="section-title" data-i18n="title_plans">Plans mensuals <span style="font-size:.7rem;font-weight:400;font-family:sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">&middot; especial charters</span></div>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:18px;font-style:italic;" data-i18n="plans_subtitle">Els plans mensuals inclouen un 10% de descompte, prioritat en reserves i la tranquil&middot;litat de tenir el teu vaixell sempre a punt.</p>
   <div class="table-wrap">
     <table>
       <thead><tr>
-        <th style="vertical-align:bottom;text-align:left;"><span data-i18n="col_plan">Pla</span><br><span class="size-eslora" data-i18n="col_eslora">Eslora →</span></th>
-        <th><span class="size-header">S</span><span class="size-range">≤ 6 m</span></th>
-        <th><span class="size-header">M</span><span class="size-range">6–8 m</span></th>
-        <th><span class="size-header">L</span><span class="size-range">8–10 m</span></th>
-        <th><span class="size-header">XL</span><span class="size-range">10–12 m</span></th>
+        <th style="vertical-align:bottom;text-align:left;"><span data-i18n="col_plan">Pla</span><br><span class="size-eslora" data-i18n="col_eslora">Eslora &rarr;</span></th>
+        <th><span class="size-header">S</span><span class="size-range">&le; 6 m</span></th>
+        <th><span class="size-header">M</span><span class="size-range">6&ndash;8 m</span></th>
+        <th><span class="size-header">L</span><span class="size-range">8&ndash;10 m</span></th>
+        <th><span class="size-header">XL</span><span class="size-range">10&ndash;12 m</span></th>
         <th><span class="size-header">XXL</span><span class="size-range">&gt; 12 m</span></th>
       </tr></thead>
       <tbody>
         <tr class="plan-basic">
           <td>
-            <span class="plan-name" data-i18n="plan_basic">Bàsic</span>
-            <span class="plan-desc" data-i18n="plan_basic_desc">2× neteja exterior / mes</span>
+            <span class="plan-name" data-i18n="plan_basic">Basic</span>
+            <span class="plan-desc" data-i18n="plan_basic_desc">2&times; neteja exterior / mes</span>
             <div class="plan-features">
-              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_travel">Desplaçament inclòs</span></span>
-              <span class="plan-feat"><span class="feat-no">✕</span> <span data-i18n="feat_no_int">Sense interior</span></span>
-              <span class="plan-feat"><span class="feat-no">✕</span> <span data-i18n="feat_no_det">Sense detailing</span></span>
+              <span class="plan-feat"><span class="feat-yes">&#10003;</span> <span data-i18n="feat_travel">Desplacament inclos</span></span>
+              <span class="plan-feat"><span class="feat-no">&#10005;</span> <span data-i18n="feat_no_int">Sense interior</span></span>
+              <span class="plan-feat"><span class="feat-no">&#10005;</span> <span data-i18n="feat_no_det">Sense detailing</span></span>
             </div>
           </td>
           <td><span class="price" id="p-basic-0"></span></td><td><span class="price" id="p-basic-1"></span></td>
@@ -194,12 +202,12 @@
         </tr>
         <tr class="plan-standard">
           <td>
-            <span class="plan-name" data-i18n="plan_std">Estàndard</span>
-            <span class="plan-desc" data-i18n="plan_std_desc">1× complet + 1× exterior / mes</span>
+            <span class="plan-name" data-i18n="plan_std">Estandard</span>
+            <span class="plan-desc" data-i18n="plan_std_desc">1&times; complet + 1&times; exterior / mes</span>
             <div class="plan-features">
-              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_travel">Desplaçament inclòs</span></span>
-              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_int">Neteja interior</span></span>
-              <span class="plan-feat"><span class="feat-no">✕</span> <span data-i18n="feat_no_det">Sense detailing</span></span>
+              <span class="plan-feat"><span class="feat-yes">&#10003;</span> <span data-i18n="feat_travel">Desplacament inclos</span></span>
+              <span class="plan-feat"><span class="feat-yes">&#10003;</span> <span data-i18n="feat_int">Neteja interior</span></span>
+              <span class="plan-feat"><span class="feat-no">&#10005;</span> <span data-i18n="feat_no_det">Sense detailing</span></span>
             </div>
           </td>
           <td><span class="price" id="p-standard-0"></span></td><td><span class="price" id="p-standard-1"></span></td>
@@ -209,12 +217,12 @@
         <tr class="plan-premium">
           <td>
             <span class="plan-name" data-i18n="plan_prem">Premium</span>
-            <span class="plan-desc" data-i18n="plan_prem_desc">2× complet + detailing / mes</span>
+            <span class="plan-desc" data-i18n="plan_prem_desc">2&times; complet + detailing / mes</span>
             <div class="plan-features">
-              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_travel">Desplaçament inclòs</span></span>
-              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_int">Neteja interior</span></span>
-              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_det">Detailing</span></span>
-              <span class="plan-feat"><span class="feat-yes">✓</span> <span data-i18n="feat_prio">Prioritat reserves</span></span>
+              <span class="plan-feat"><span class="feat-yes">&#10003;</span> <span data-i18n="feat_travel">Desplacament inclos</span></span>
+              <span class="plan-feat"><span class="feat-yes">&#10003;</span> <span data-i18n="feat_int">Neteja interior</span></span>
+              <span class="plan-feat"><span class="feat-yes">&#10003;</span> <span data-i18n="feat_det">Detailing</span></span>
+              <span class="plan-feat"><span class="feat-yes">&#10003;</span> <span data-i18n="feat_prio">Prioritat reserves</span></span>
             </div>
           </td>
           <td><span class="price" id="p-premium-0"></span></td><td><span class="price" id="p-premium-1"></span></td>
@@ -225,7 +233,7 @@
     </table>
   </div>
   <div class="divider"></div>
-  <div class="section-label" data-i18n="label_suppl">Suplements i recàrrecs</div>
+  <div class="section-label" data-i18n="label_suppl">Suplements i recurrecs</div>
   <div class="section-title" data-i18n="title_suppl">Serveis addicionals</div>
   <div class="supplements-grid">
     <div class="supp-card"><span class="supp-name" data-i18n="supp_urgent">Servei urgent i caps de setmana</span><span class="supp-val">+<span id="s-urgent"></span>%</span></div>
@@ -235,7 +243,7 @@
   <div class="section-label" data-i18n="label_packs">Packs de serveis</div>
   <div class="section-title" data-i18n="title_packs">Packs</div>
   <p style="font-size:.85rem;color:var(--muted);margin-bottom:4px;" data-i18n="packs_subtitle">Compra un pack i estalvia fins a un 15%</p>
-  <p style="font-size:.82rem;color:var(--muted);font-style:italic;margin-bottom:18px;" data-i18n="packs_any">Vàlid per a qualsevol tipus de servei — exterior, interior o complet.</p>
+  <p style="font-size:.82rem;color:var(--muted);font-style:italic;margin-bottom:18px;" data-i18n="packs_any">Valid per a qualsevol tipus de servei &mdash; exterior, interior o complet.</p>
   <div class="table-wrap">
     <table style="min-width:0;">
       <thead><tr>
@@ -255,20 +263,20 @@
 </main>
 <div class="contact-section">
   <div class="contact-title" data-i18n="contact_title">Reserva el teu <em>servei</em></div>
-  <p class="contact-sub" data-i18n="contact_sub">Demana informació online o contacta'ns directament</p>
+  <p class="contact-sub" data-i18n="contact_sub">Demana informacio online o contacta'ns directament</p>
   <a class="contact-phone" href="tel:+34663876778">+34 663 876 778</a>
   <a class="contact-email-text" href="mailto:info@nauticcreus.com">info@nauticcreus.com</a>
   <div class="btn-calendly-wrap">
     <a class="btn-calendly" id="btn-calendly" href="https://calendly.com/nauticcreus-info/reserva-ca" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/></svg>
-      <span data-i18n="btn_booking">Sol·licita cita</span>
+      <span data-i18n="btn_booking">Sol&middot;licita cita</span>
     </a>
-    <p class="booking-note" data-i18n="booking_note">Confirmació en menys de 24h</p>
+    <p class="booking-note" data-i18n="booking_note">Confirmacio en menys de 24h</p>
   </div>
 </div>
 <footer>
-  <strong>Nàutic Creus</strong> · Cleaning Solutions<br>
-  <span data-i18n="footer_note">Preus vàlids temporada 2026<br>IVA i desplaçament inclosos</span><br><br>
+  <strong>Nautic Creus</strong> &middot; Cleaning Solutions<br>
+  <span data-i18n="footer_note">Preus valids temporada 2026<br>IVA i desplacament inclosos</span><br><br>
   <div style="display:flex;justify-content:center;gap:10px;margin-bottom:14px;">
     <a class="btn-contact btn-whatsapp" href="https://wa.me/34663876778" target="_blank" title="WhatsApp">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -277,92 +285,95 @@
       <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
     </a>
   </div>
-  <a href="/legal" style="color:rgba(255,255,255,.35);font-size:.7rem;letter-spacing:.06em;" data-i18n="footer_legal">Avís Legal · Privacitat · Cookies</a>
+  <a href="/legal" style="color:rgba(255,255,255,.35);font-size:.7rem;letter-spacing:.06em;" data-i18n="footer_legal">Avis Legal &middot; Privacitat &middot; Cookies</a>
 </footer>
 <script>
 const i18n = {
   ca: {
-    hero_title:'Tarifes', hero_sub:'Serveis professionals de neteja i&nbsp;manteniment nàutic',
-    iva_note:'Tots els preus inclouen IVA&nbsp;(21%) i&nbsp;desplaçament',
+    hero_title:'Tarifes', hero_sub:'Serveis professionals de neteja i&nbsp;manteniment nautic',
+    iva_note:'Tots els preus inclouen IVA&nbsp;(21%) i&nbsp;desplacament',
     label_punctual:'Serveis puntuals', title_punctual:'Tarifes per servei',
-    label_plans:'Plans de fidelització',
-    title_plans:'Plans mensuals <span style="font-size:.7rem;font-weight:400;font-family:\'DM Sans\',sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">· especial charters</span>',
-    plans_subtitle:'Els plans mensuals inclouen un 10% de descompte, prioritat en reserves i la tranquil·litat de tenir el teu vaixell sempre a punt.',
-    label_suppl:'Suplements i recàrrecs', title_suppl:'Serveis addicionals',
-    col_service:'Servei', col_eslora:'Eslora →', col_plan:'Pla',
+    label_plans:'Plans de fidelitzacio',
+    title_plans:'Plans mensuals <span style="font-size:.7rem;font-weight:400;font-family:sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">&middot; especial charters</span>',
+    plans_subtitle:'Els plans mensuals inclouen un 10% de descompte, prioritat en reserves i la tranquil&middot;litat de tenir el teu vaixell sempre a punt.',
+    label_suppl:'Suplements i recurrecs', title_suppl:'Serveis addicionals',
+    col_service:'Servei', col_eslora:'Eslora &rarr;', col_plan:'Pla',
     col_pack:'Pack', col_services:'Neteges', col_discount:'Descompte',
     svc_ext:'Neteja exterior', svc_int:'Neteja interior',
     svc_full:'Servei complet<br><span style="font-size:.78rem;color:var(--muted);">(ext + int)</span>',
-    svc_detail_addon:'↳ + Detailing (inox, plàstics, cristalls)',
-    plan_basic:'Bàsic', plan_basic_desc:'2× neteja exterior / mes',
-    plan_std:'Estàndard', plan_std_desc:'1× complet + 1× exterior / mes',
-    plan_prem:'Premium', plan_prem_desc:'2× complet + detailing / mes',
-    feat_travel:'Desplaçament inclòs', feat_no_int:'Sense interior',
+    svc_detail_addon:'&#8627; + Detailing (inox, plastics, cristalls)',
+    svc_rinse:'Rentat amb aigua dolca (eliminacio de sal)',
+    plan_basic:'Basic', plan_basic_desc:'2&times; neteja exterior / mes',
+    plan_std:'Estandard', plan_std_desc:'1&times; complet + 1&times; exterior / mes',
+    plan_prem:'Premium', plan_prem_desc:'2&times; complet + detailing / mes',
+    feat_travel:'Desplacament inclos', feat_no_int:'Sense interior',
     feat_no_det:'Sense detailing', feat_int:'Neteja interior',
     feat_det:'Detailing trimestral', feat_prio:'Prioritat reserves',
     supp_urgent:'Servei urgent i caps de setmana', supp_dirty:'Estat inicial molt brut',
     contact_title:'Reserva el teu <em>servei</em>',
-    contact_sub:'Demana informació online o contacta\'ns directament',
-    btn_booking:'Sol·licita cita', booking_note:'Confirmació en menys de 24h',
+    contact_sub:'Demana informacio online o contacta\'ns directament',
+    btn_booking:'Sol&middot;licita cita', booking_note:'Confirmacio en menys de 24h',
     btn_contact:'Contacta',
     label_packs:'Packs de serveis', title_packs:'Packs',
     packs_subtitle:'Compra un pack i estalvia fins a un 15%',
-    packs_any:'Vàlid per a qualsevol tipus de servei — exterior, interior o complet.',
+    packs_any:'Valid per a qualsevol tipus de servei &mdash; exterior, interior o complet.',
     packs_note:'Els serveis del pack no caduquen i es poden utilitzar en qualsevol moment.',
     packs_price:'El preu del pack es calcula sobre el servei escollit. Contacta\'ns per al teu pressupost personalitzat.',
     xxl_consult:'A consultar', nav_about:'Sobre nosaltres',
-    footer_note:'Preus vàlids temporada 2026<br>IVA i desplaçament inclosos',
-    footer_legal:'Avís Legal · Privacitat · Cookies'
+    footer_note:'Preus valids temporada 2026<br>IVA i desplacament inclosos',
+    footer_legal:'Avis Legal &middot; Privacitat &middot; Cookies'
   },
   es: {
-    hero_title:'Tarifas', hero_sub:'Servicios profesionales de limpieza y mantenimiento náutico',
+    hero_title:'Tarifas', hero_sub:'Servicios profesionales de limpieza y mantenimiento nautico',
     iva_note:'Todos los precios incluyen IVA (21%) y desplazamiento',
     label_punctual:'Servicios puntuales', title_punctual:'Tarifas por servicio',
-    label_plans:'Planes de fidelización',
-    title_plans:'Planes mensuales <span style="font-size:.7rem;font-weight:400;font-family:\'DM Sans\',sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">· especial charters</span>',
-    plans_subtitle:'Los planes mensuales incluyen un 10% de descuento, prioridad en reservas y la tranquilidad de tener tu embarcación siempre a punto.',
+    label_plans:'Planes de fidelizacion',
+    title_plans:'Planes mensuales <span style="font-size:.7rem;font-weight:400;font-family:sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">&middot; especial charters</span>',
+    plans_subtitle:'Los planes mensuales incluyen un 10% de descuento, prioridad en reservas y la tranquilidad de tener tu embarcacion siempre a punto.',
     label_suppl:'Suplementos y recargos', title_suppl:'Servicios adicionales',
-    col_service:'Servicio', col_eslora:'Eslora →', col_plan:'Plan',
+    col_service:'Servicio', col_eslora:'Eslora &rarr;', col_plan:'Plan',
     col_pack:'Pack', col_services:'Limpiezas', col_discount:'Descuento',
     svc_ext:'Limpieza exterior', svc_int:'Limpieza interior',
     svc_full:'Servicio completo<br><span style="font-size:.78rem;color:var(--muted);">(ext + int)</span>',
-    svc_detail_addon:'↳ + Detailing (inox, plásticos, cristales)',
-    plan_basic:'Básico', plan_basic_desc:'2× limpieza exterior / mes',
-    plan_std:'Estándar', plan_std_desc:'1× completo + 1× exterior / mes',
-    plan_prem:'Premium', plan_prem_desc:'2× completo + detailing / mes',
+    svc_detail_addon:'&#8627; + Detailing (inox, plasticos, cristales)',
+    svc_rinse:'Lavado con agua dulce (eliminacion de sal)',
+    plan_basic:'Basico', plan_basic_desc:'2&times; limpieza exterior / mes',
+    plan_std:'Estandar', plan_std_desc:'1&times; completo + 1&times; exterior / mes',
+    plan_prem:'Premium', plan_prem_desc:'2&times; completo + detailing / mes',
     feat_travel:'Desplazamiento incluido', feat_no_int:'Sin interior',
     feat_no_det:'Sin detailing', feat_int:'Limpieza interior',
     feat_det:'Detailing trimestral', feat_prio:'Prioridad reservas',
     supp_urgent:'Servicio urgente y fines de semana', supp_dirty:'Estado inicial muy sucio',
     contact_title:'Reserva tu <em>servicio</em>',
-    contact_sub:'Solicita información online o contáctanos directamente',
-    btn_booking:'Solicitar cita', booking_note:'Confirmación en menos de 24h',
+    contact_sub:'Solicita informacion online o contactanos directamente',
+    btn_booking:'Solicitar cita', booking_note:'Confirmacion en menos de 24h',
     btn_contact:'Contactar',
     label_packs:'Packs de servicios', title_packs:'Packs',
     packs_subtitle:'Compra un pack y ahorra hasta un 15%',
-    packs_any:'Válido para cualquier tipo de servicio — exterior, interior o completo.',
+    packs_any:'Valido para cualquier tipo de servicio &mdash; exterior, interior o completo.',
     packs_note:'Los servicios del pack no caducan y se pueden usar en cualquier momento.',
-    packs_price:'El precio del pack se calcula sobre el servicio elegido. Contáctanos para tu presupuesto personalizado.',
+    packs_price:'El precio del pack se calcula sobre el servicio elegido. Contactanos para tu presupuesto personalizado.',
     xxl_consult:'A consultar', nav_about:'Sobre nosotros',
-    footer_note:'Precios válidos temporada 2026<br>IVA y desplazamiento incluidos',
-    footer_legal:'Aviso Legal · Privacidad · Cookies'
+    footer_note:'Precios validos temporada 2026<br>IVA y desplazamiento incluidos',
+    footer_legal:'Aviso Legal &middot; Privacidad &middot; Cookies'
   },
   en: {
     hero_title:'Our Rates', hero_sub:'Professional boat cleaning and maintenance services',
     iva_note:'All prices include VAT (21%) and travel expenses',
     label_punctual:'One-off services', title_punctual:'Service rates',
     label_plans:'Loyalty plans',
-    title_plans:'Monthly plans <span style="font-size:.7rem;font-weight:400;font-family:\'DM Sans\',sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">· special charters</span>',
+    title_plans:'Monthly plans <span style="font-size:.7rem;font-weight:400;font-family:sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">&middot; special charters</span>',
     plans_subtitle:'Monthly plans include a 10% discount, priority booking and the peace of mind of keeping your boat always in perfect condition.',
     label_suppl:'Surcharges', title_suppl:'Add-ons &amp; surcharges',
-    col_service:'Service', col_eslora:'Length →', col_plan:'Plan',
+    col_service:'Service', col_eslora:'Length &rarr;', col_plan:'Plan',
     col_pack:'Pack', col_services:'Cleanings', col_discount:'Discount',
     svc_ext:'Exterior cleaning', svc_int:'Interior cleaning',
     svc_full:'Full service<br><span style="font-size:.78rem;color:var(--muted);">(ext + int)</span>',
-    svc_detail_addon:'↳ + Detailing (stainless steel, plastics, glass)',
-    plan_basic:'Basic', plan_basic_desc:'2× exterior cleaning / month',
-    plan_std:'Standard', plan_std_desc:'1× full + 1× exterior / month',
-    plan_prem:'Premium', plan_prem_desc:'2× full + detailing / month',
+    svc_detail_addon:'&#8627; + Detailing (stainless steel, plastics, glass)',
+    svc_rinse:'Freshwater rinse (salt removal)',
+    plan_basic:'Basic', plan_basic_desc:'2&times; exterior cleaning / month',
+    plan_std:'Standard', plan_std_desc:'1&times; full + 1&times; exterior / month',
+    plan_prem:'Premium', plan_prem_desc:'2&times; full + detailing / month',
     feat_travel:'Travel included', feat_no_int:'No interior',
     feat_no_det:'No detailing', feat_int:'Interior cleaning',
     feat_det:'Quarterly detailing', feat_prio:'Priority booking',
@@ -373,45 +384,46 @@ const i18n = {
     btn_contact:'Contact',
     label_packs:'Service packs', title_packs:'Packs',
     packs_subtitle:'Buy a pack and save up to 15%',
-    packs_any:'Valid for any type of service — exterior, interior or full.',
+    packs_any:'Valid for any type of service &mdash; exterior, interior or full.',
     packs_note:'Pack services never expire and can be used at any time.',
     packs_price:'The pack price is calculated based on the selected service. Contact us for your personalised quote.',
     xxl_consult:'On request', nav_about:'About us',
     footer_note:'Prices valid season 2026<br>VAT and travel included',
-    footer_legal:'Legal Notice · Privacy · Cookies'
+    footer_legal:'Legal Notice &middot; Privacy &middot; Cookies'
   },
   fr: {
     hero_title:'Tarifs', hero_sub:'Services professionnels de nettoyage et entretien nautique',
-    iva_note:'Tous les prix incluent la TVA (21%) et le déplacement',
+    iva_note:'Tous les prix incluent la TVA (21%) et le deplacement',
     label_punctual:'Services ponctuels', title_punctual:'Tarifs par service',
-    label_plans:'Plans de fidélisation',
-    title_plans:'Plans mensuels <span style="font-size:.7rem;font-weight:400;font-family:\'DM Sans\',sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">· spécial charters</span>',
-    plans_subtitle:'Les plans mensuels incluent une remise de 10%, la priorité sur les réservations et la tranquillité d\'avoir votre bateau toujours prêt.',
+    label_plans:'Plans de fidelisation',
+    title_plans:'Plans mensuels <span style="font-size:.7rem;font-weight:400;font-family:sans-serif;color:var(--muted);letter-spacing:.06em;font-style:italic;">&middot; special charters</span>',
+    plans_subtitle:'Les plans mensuels incluent une remise de 10%, la priorite sur les reservations et la tranquillite d\'avoir votre bateau toujours pret.',
     label_suppl:'Majorations', title_suppl:'Services additionnels',
-    col_service:'Service', col_eslora:'Longueur →', col_plan:'Plan',
+    col_service:'Service', col_eslora:'Longueur &rarr;', col_plan:'Plan',
     col_pack:'Pack', col_services:'Nettoyages', col_discount:'Remise',
-    svc_ext:'Nettoyage extérieur', svc_int:'Nettoyage intérieur',
+    svc_ext:'Nettoyage exterieur', svc_int:'Nettoyage interieur',
     svc_full:'Service complet<br><span style="font-size:.78rem;color:var(--muted);">(ext + int)</span>',
-    svc_detail_addon:'↳ + Detailing (inox, plastiques, vitres)',
-    plan_basic:'Basique', plan_basic_desc:'2× extérieur / mois',
-    plan_std:'Standard', plan_std_desc:'1× complet + 1× extérieur / mois',
-    plan_prem:'Premium', plan_prem_desc:'2× complet + detailing / mois',
-    feat_travel:'Déplacement inclus', feat_no_int:'Sans intérieur',
-    feat_no_det:'Sans detailing', feat_int:'Nettoyage intérieur',
-    feat_det:'Detailing trimestriel', feat_prio:'Priorité réservations',
-    supp_urgent:'Service urgent et week-ends', supp_dirty:'État initial très sale',
-    contact_title:'Réserver votre <em>service</em>',
+    svc_detail_addon:'&#8627; + Detailing (inox, plastiques, vitres)',
+    svc_rinse:'Rincage a l\'eau douce (dessalage)',
+    plan_basic:'Basique', plan_basic_desc:'2&times; exterieur / mois',
+    plan_std:'Standard', plan_std_desc:'1&times; complet + 1&times; exterieur / mois',
+    plan_prem:'Premium', plan_prem_desc:'2&times; complet + detailing / mois',
+    feat_travel:'Deplacement inclus', feat_no_int:'Sans interieur',
+    feat_no_det:'Sans detailing', feat_int:'Nettoyage interieur',
+    feat_det:'Detailing trimestriel', feat_prio:'Priorite reservations',
+    supp_urgent:'Service urgent et week-ends', supp_dirty:'Etat initial tres sale',
+    contact_title:'Reserver votre <em>service</em>',
     contact_sub:'Demandez des informations en ligne ou contactez-nous',
     btn_booking:'Demander un rendez-vous', booking_note:'Confirmation sous 24h',
     btn_contact:'Contacter',
     label_packs:'Packs de services', title_packs:'Packs',
-    packs_subtitle:'Achetez un pack et économisez jusqu\'à 15%',
-    packs_any:'Valable pour tout type de service — extérieur, intérieur ou complet.',
-    packs_note:'Les services du pack n\'expirent pas et peuvent être utilisés à tout moment.',
-    packs_price:'Le prix du pack est calculé sur le service choisi. Contactez-nous pour votre devis personnalisé.',
-    xxl_consult:'Sur demande', nav_about:'À propos',
-    footer_note:'Prix valables saison 2026<br>TVA et déplacement inclus',
-    footer_legal:'Mentions légales · Confidentialité · Cookies'
+    packs_subtitle:'Achetez un pack et economisez jusqu\'a 15%',
+    packs_any:'Valable pour tout type de service &mdash; exterieur, interieur ou complet.',
+    packs_note:'Les services du pack n\'expirent pas et peuvent etre utilises a tout moment.',
+    packs_price:'Le prix du pack est calcule sur le service choisi. Contactez-nous pour votre devis personalise.',
+    xxl_consult:'Sur demande', nav_about:'A propos',
+    footer_note:'Prix valables saison 2026<br>TVA et deplacement inclus',
+    footer_legal:'Mentions legales &middot; Confidentialite &middot; Cookies'
   }
 };
 const calendlyUrls = {
